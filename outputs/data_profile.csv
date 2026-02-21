@@ -1,0 +1,2 @@
+ticker,first_date,last_date,total_trading_days,m1_sampled_rows,avg_bars_per_day,min_bars_per_day,max_bars_per_day,missing_weekdays,anomaly_count,anomalies_sample
+GAZP,2006-01-23,2022-02-24,4035,26473,529.5,434,811,186,0,

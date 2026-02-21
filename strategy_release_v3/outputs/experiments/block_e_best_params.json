@@ -1,0 +1,13 @@
+{
+  "lookback": 285,
+  "length": 270,
+  "lookback2": 40,
+  "length2": 115,
+  "min_s": 280,
+  "max_s": 390,
+  "koeff1": 1.007353141655165,
+  "koeff2": 0.9739019677892902,
+  "mmcoff": 20,
+  "exitday": 0,
+  "sdel_day": 1
+}

@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "U0lF/uKARdY=",
+  "success": true,
+  "projectFilePath": "G:\\StockPredict\\GIT\\RTSF_Strategy_ML\\RTSF_Strategy_ML.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\csvhelper\\33.1.0\\csvhelper.33.1.0.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\10.0.3\\microsoft.aspnetcore.connections.abstractions.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.aspnetcore.http.connections.client\\10.0.3\\microsoft.aspnetcore.http.connections.client.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.aspnetcore.http.connections.common\\10.0.3\\microsoft.aspnetcore.http.connections.common.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.aspnetcore.signalr.client\\10.0.3\\microsoft.aspnetcore.signalr.client.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.aspnetcore.signalr.client.core\\10.0.3\\microsoft.aspnetcore.signalr.client.core.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.aspnetcore.signalr.common\\10.0.3\\microsoft.aspnetcore.signalr.common.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.aspnetcore.signalr.protocols.json\\10.0.3\\microsoft.aspnetcore.signalr.protocols.json.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\10.0.3\\microsoft.extensions.dependencyinjection.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.3\\microsoft.extensions.dependencyinjection.abstractions.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.extensions.features\\10.0.3\\microsoft.extensions.features.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.extensions.logging\\10.0.3\\microsoft.extensions.logging.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.3\\microsoft.extensions.logging.abstractions.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.extensions.options\\10.0.3\\microsoft.extensions.options.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.3\\microsoft.extensions.primitives.10.0.3.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.ml.onnxruntime\\1.24.2\\microsoft.ml.onnxruntime.1.24.2.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\microsoft.ml.onnxruntime.managed\\1.24.2\\microsoft.ml.onnxruntime.managed.1.24.2.nupkg.sha512",
+    "C:\\Users\\Pavel Dikalov\\.nuget\\packages\\system.numerics.tensors\\9.0.0\\system.numerics.tensors.9.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,6 @@
+test,pass,detail
+Repeatability,True,"{'spread_pct': 12.6, 'maes': [0.004184897523373365, 0.0047463891096413136]}"
+Noise injection,True,"{'degradation_pct': 0.0, 'clean_mae': 0.004184897523373365, 'noisy_mae': 0.004184897523373365}"
+Short data (3y),True,{'mae': 0.011079742573201656}
+Small batch,True,"{'delta_pct': 4.5, 'base_mae': 0.004184897523373365, 'small_mae': 0.003995173145085573}"
+Few correlates (2),True,{'mae': 0.004108871798962355}

@@ -1,0 +1,4 @@
+experiment,model_type,loss_fn,generator,description,MAE,MAPE,DirAcc,PinballLoss,HighConfDirAcc,HighConfCount,HighConfPct,time_sec,n_features,train_samples,test_samples
+C3a,cross_attn,huber,tst,"CrossAttn d=64, h=4, L=2",0.01390775665640831,1.4244552850723267,0.4965383550263085,0.005047796216482918,,,,292.7,16,14238,3624
+C3b,cross_attn,huber,tst,"CrossAttn d=32, h=2, L=1 (small)",0.015376492403447628,2.472435235977173,0.5095541401273885,0.004685833662127455,,,,279.7,16,14238,3624
+C3c,cross_attn,huber,tst,CrossAttn d=64 + supervised loss,0.014512267895042896,2.021381139755249,0.5153697036831902,0.004813866689801216,,,,289.0,16,14238,3624

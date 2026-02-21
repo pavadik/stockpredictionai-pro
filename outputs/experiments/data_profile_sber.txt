@@ -1,0 +1,24 @@
+== Data Profile Report: SBER M5 Experiment ==
+Date: 2026-02-16
+Data source: G:\data2
+
+== Target Ticker ==
+SBER: 2006-01-10 -> 2022-02-24, 4031 days, avg 526.6 M1 bars/day, 0 anomalies
+
+== Correlated Tickers ==
+RTSF: 2006-01-10 -> 2022-02-24, 4047 days, avg 744.3 M1 bars/day, 0 anomalies
+GMKN: 2006-01-10 -> 2022-02-24, 4059 days, avg 522.4 M1 bars/day, 0 anomalies
+LKOH: 2006-01-10 -> 2022-02-24, 4043 days, avg 523.6 M1 bars/day, 0 anomalies
+GAZP: 2006-01-23 -> 2022-02-24, 4035 days, avg 529.5 M1 bars/day, 0 anomalies
+
+== Criteria Check ==
+[PASS] SBER >= 1500 days for 2015-2021
+[PASS] All 4 correlates have data for 2015-2021
+[PASS] Anomalies (zero price) = 0% (all tickers)
+[PASS] Avg M1 bars/day >= 300 (all > 520)
+
+== Training Period ==
+TRAIN_START = 2015-01-01
+TRAIN_END   = 2021-12-31
+TEST_YEARS  = 1
+Est. M5 bars (2015-2021): ~1750 days * 105 bars/day = ~183K M5 bars

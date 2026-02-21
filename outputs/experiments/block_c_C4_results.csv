@@ -1,0 +1,4 @@
+experiment,model_type,loss_fn,generator,description,MAE,MAPE,DirAcc,PinballLoss,HighConfDirAcc,HighConfCount,HighConfPct,time_sec,n_features,train_samples,test_samples
+C4a,tft,huber,lstm,"TFT d=32, h=2, 1 LSTM layer (minimal)",0.013726404868066311,1.3136966228485107,0.4882304070894489,0.004786527482792735,,,,294.7,16,14238,3624
+C4b,tft,huber,lstm,"TFT d=64, h=4, 2 LSTM layers (full)",0.013505927287042141,1.2057267427444458,0.5253392412074218,0.00515878953350087,,,,277.8,16,14238,3624
+C4c,tft,huber,lstm,TFT d=32 (print VSN weights),0.013726404868066311,1.3136966228485107,0.4882304070894489,0.004786527482792735,,,,280.6,16,14238,3624

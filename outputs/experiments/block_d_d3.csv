@@ -1,0 +1,5 @@
+experiment,model_type,description,horizons,atr_target,vol_keep,MAE,MAPE,DirAcc,PinballLoss,DirAcc_norm,MAE_h1,MAE_h2,MAE_h4,DirAcc_h1,DirAcc_h2,DirAcc_h4,MAE_avg,DirAcc_avg,time_sec,n_features,train_samples,test_samples
+D3a,tft,All volume (range+gap+vol+vwap+ATR+OBV),"(1,)",False,all,0.003947662189602852,1.0454760789871216,0.4936489881037016,0.0015175093431025743,,,,,,,,,,269.9,17,166022,42211
+D3b,tft,range + gap only (top-2 VSN features),"(1,)",False,range_gap,0.003955359570682049,1.067987084388733,0.48848286648656336,0.0013860755910476048,,,,,,,,,,146.4,13,166022,42211
+D3c,tft,range + gap + ATR + OBV (drop low-weight),"(1,)",False,range_gap_atr_obv,0.003950527403503656,1.0266010761260986,0.48630266837290864,0.0015106027713045478,,,,,,,,,,235.1,15,166022,42211
+D3d,tft,No volume features at all,"(1,)",False,none,0.003949517384171486,1.0353957414627075,0.48305606900800985,0.0014218090412517388,,,,,,,,,,232.3,11,166022,42211

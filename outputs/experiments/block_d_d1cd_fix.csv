@@ -1,0 +1,3 @@
+experiment,model_type,description,horizons,atr_target,vol_keep,MAE,MAPE,DirAcc,PinballLoss,DirAcc_norm,MAE_h1,MAE_h2,MAE_h4,DirAcc_h1,DirAcc_h2,DirAcc_h4,MAE_avg,DirAcc_avg,time_sec,n_features,train_samples,test_samples
+D1c,tft,TFT d=64 2-bar-ahead only,"(2,)",False,all,0.0055121066980063915,1.0220340490341187,0.4990876128634737,0.001934814111640056,,,,,,,,,,296.8,17,166022,42211
+D1d,tft,TFT d=64 4-bar-ahead only,"(4,)",False,all,0.007753288373351097,1.0609534978866577,0.5072164948453608,0.003047981997951865,,,,,,,,,,145.8,17,166022,42211

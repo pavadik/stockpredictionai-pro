@@ -1,0 +1,726 @@
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+======================================================================
+  ML Strategy: SBER H1 h=4 | mode=long_only_combined
+  ATR threshold: 0.3
+======================================================================
+
+Loading H1 panel...
+Panel: (22007, 17), loaded in 50.1s
+  Device : NVIDIA GeForce RTX 3090 Ti  (compute capability 8.6)
+  VRAM   : 24.0 GB total, 22.7 GB free
+  PyTorch: 2.8.0+cu128  |  CUDA: 12.8  |  cuDNN: 91002
+  TF32   : matmul=False  cuDNN=True
+  cuDNN benchmark: False
+  AMP    : enabled
+Walk-forward: 20 splits, min_train=3000, step=720
+
+============================================================
+  Split 1/20: train=3000 test=720
+  Test: 2021-01-12 20:00:00 -> 2021-03-26 14:00:00
+  Price range: 257.90 - 293.30
+============================================================
+  Momentum signals: 656/720 (91.1%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2681 D=0.0000 val_MAE=0.1264 *
+  epoch 2/20: G=0.1741 D=0.0000 val_MAE=0.0879 *
+  epoch 3/20: G=0.1670 D=0.0000 val_MAE=0.0721 *
+  epoch 4/20: G=0.1645 D=0.0000 val_MAE=0.0707 *
+  epoch 5/20: G=0.1625 D=0.0000 val_MAE=0.0649 *
+  epoch 6/20: G=0.1632 D=0.0000 val_MAE=0.0644 *
+  epoch 7/20: G=0.1621 D=0.0000 val_MAE=0.0659
+  epoch 8/20: G=0.1613 D=0.0000 val_MAE=0.0641 *
+  epoch 9/20: G=0.1607 D=0.0000 val_MAE=0.0648
+  epoch 10/20: G=0.1606 D=0.0000 val_MAE=0.0644
+  epoch 11/20: G=0.1603 D=0.0000 val_MAE=0.0646
+  epoch 12/20: G=0.1598 D=0.0000 val_MAE=0.0644
+  epoch 13/20: G=0.1596 D=0.0000 val_MAE=0.0638 *
+  epoch 14/20: G=0.1590 D=0.0000 val_MAE=0.0645
+  epoch 15/20: G=0.1591 D=0.0000 val_MAE=0.0640
+  epoch 16/20: G=0.1583 D=0.0000 val_MAE=0.0657
+  epoch 17/20: G=0.1579 D=0.0000 val_MAE=0.0651
+  epoch 18/20: G=0.1575 D=0.0000 val_MAE=0.0672
+  Early stopping at epoch 18 (patience=5)
+  TFT DirAcc=0.538 (trained in 32.0s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 269/720 (37.4%)
+
+  Split 1: 91 trades, PnL=-4.84%, WR=53.8%, Sharpe=-0.56, MaxDD=9.97%
+    Long: 91 (-4.84%), Short: 0 (0.00%)
+
+============================================================
+  Split 2/20: train=3720 test=720
+  Test: 2021-03-26 15:00:00 -> 2021-06-08 20:00:00
+  Price range: 279.39 - 320.19
+============================================================
+  Momentum signals: 628/720 (87.2%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2405 D=0.0000 val_MAE=0.0758 *
+  epoch 2/20: G=0.1653 D=0.0000 val_MAE=0.0687 *
+  epoch 3/20: G=0.1609 D=0.0000 val_MAE=0.0442 *
+  epoch 4/20: G=0.1598 D=0.0000 val_MAE=0.0483
+  epoch 5/20: G=0.1593 D=0.0000 val_MAE=0.0609
+  epoch 6/20: G=0.1587 D=0.0000 val_MAE=0.0446
+  epoch 7/20: G=0.1586 D=0.0000 val_MAE=0.0445
+  epoch 8/20: G=0.1579 D=0.0000 val_MAE=0.0562
+  Early stopping at epoch 8 (patience=5)
+  TFT DirAcc=0.553 (trained in 28.0s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 315/720 (43.8%)
+
+  Split 2: 111 trades, PnL=-0.02%, WR=51.3%, Sharpe=-0.00, MaxDD=5.35%
+    Long: 111 (-0.02%), Short: 0 (0.00%)
+
+============================================================
+  Split 3/20: train=4440 test=720
+  Test: 2021-06-08 21:00:00 -> 2021-08-19 12:00:00
+  Price range: 290.20 - 338.61
+============================================================
+  Momentum signals: 636/720 (88.3%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2313 D=0.0000 val_MAE=0.1726 *
+  epoch 2/20: G=0.1586 D=0.0000 val_MAE=0.0475 *
+  epoch 3/20: G=0.1564 D=0.0000 val_MAE=0.0313 *
+  epoch 4/20: G=0.1552 D=0.0000 val_MAE=0.0296 *
+  epoch 5/20: G=0.1550 D=0.0000 val_MAE=0.0317
+  epoch 6/20: G=0.1554 D=0.0000 val_MAE=0.0380
+  epoch 7/20: G=0.1550 D=0.0000 val_MAE=0.0303
+  epoch 8/20: G=0.1558 D=0.0000 val_MAE=0.0382
+  epoch 9/20: G=0.1548 D=0.0000 val_MAE=0.0295 *
+  epoch 10/20: G=0.1539 D=0.0000 val_MAE=0.0295
+  epoch 11/20: G=0.1536 D=0.0000 val_MAE=0.0295
+  epoch 12/20: G=0.1538 D=0.0000 val_MAE=0.0313
+  epoch 13/20: G=0.1528 D=0.0000 val_MAE=0.0296
+  epoch 14/20: G=0.1522 D=0.0000 val_MAE=0.0320
+  Early stopping at epoch 14 (patience=5)
+  TFT DirAcc=0.541 (trained in 32.2s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 319/720 (44.3%)
+
+  Split 3: 111 trades, PnL=-3.03%, WR=46.9%, Sharpe=-0.63, MaxDD=10.95%
+    Long: 111 (-3.03%), Short: 0 (0.00%)
+
+============================================================
+  Split 4/20: train=5160 test=720
+  Test: 2021-08-19 13:00:00 -> 2021-10-29 18:00:00
+  Price range: 321.04 - 387.60
+============================================================
+  Momentum signals: 629/720 (87.4%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2125 D=0.0000 val_MAE=0.0690 *
+  epoch 2/20: G=0.1581 D=0.0000 val_MAE=0.0458 *
+  epoch 3/20: G=0.1542 D=0.0000 val_MAE=0.0528
+  epoch 4/20: G=0.1538 D=0.0000 val_MAE=0.0456 *
+  epoch 5/20: G=0.1531 D=0.0000 val_MAE=0.0457
+  epoch 6/20: G=0.1521 D=0.0000 val_MAE=0.0504
+  epoch 7/20: G=0.1523 D=0.0000 val_MAE=0.0458
+  epoch 8/20: G=0.1529 D=0.0000 val_MAE=0.0463
+  epoch 9/20: G=0.1531 D=0.0000 val_MAE=0.0460
+  Early stopping at epoch 9 (patience=5)
+  TFT DirAcc=0.531 (trained in 32.1s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 224/720 (31.1%)
+
+  Split 4: 78 trades, PnL=3.50%, WR=44.9%, Sharpe=0.53, MaxDD=5.49%
+    Long: 78 (3.50%), Short: 0 (0.00%)
+
+============================================================
+  Split 5/20: train=5880 test=720
+  Test: 2021-10-29 19:00:00 -> 2022-01-06 11:00:00
+  Price range: 272.68 - 372.75
+============================================================
+  Momentum signals: 657/720 (91.2%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2168 D=0.0000 val_MAE=0.0665 *
+  epoch 2/20: G=0.1555 D=0.0000 val_MAE=0.0583 *
+  epoch 3/20: G=0.1518 D=0.0000 val_MAE=0.0533 *
+  epoch 4/20: G=0.1511 D=0.0000 val_MAE=0.0534
+  epoch 5/20: G=0.1518 D=0.0000 val_MAE=0.0533
+  epoch 6/20: G=0.1513 D=0.0000 val_MAE=0.0544
+  epoch 7/20: G=0.1499 D=0.0000 val_MAE=0.0531 *
+  epoch 8/20: G=0.1499 D=0.0000 val_MAE=0.0540
+  epoch 9/20: G=0.1499 D=0.0000 val_MAE=0.0538
+  epoch 10/20: G=0.1498 D=0.0000 val_MAE=0.0528 *
+  epoch 11/20: G=0.1497 D=0.0000 val_MAE=0.0533
+  epoch 12/20: G=0.1488 D=0.0000 val_MAE=0.0537
+  epoch 13/20: G=0.1482 D=0.0000 val_MAE=0.0572
+  epoch 14/20: G=0.1483 D=0.0000 val_MAE=0.0526 *
+  epoch 15/20: G=0.1482 D=0.0000 val_MAE=0.0542
+  epoch 16/20: G=0.1473 D=0.0000 val_MAE=0.0533
+  epoch 17/20: G=0.1467 D=0.0000 val_MAE=0.0569
+  epoch 18/20: G=0.1464 D=0.0000 val_MAE=0.0599
+  epoch 19/20: G=0.1456 D=0.0000 val_MAE=0.0549
+  Early stopping at epoch 19 (patience=5)
+  TFT DirAcc=0.583 (trained in 44.2s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 121/720 (16.8%)
+
+  Split 5: 44 trades, PnL=10.79%, WR=59.1%, Sharpe=1.58, MaxDD=3.51%
+    Long: 44 (10.79%), Short: 0 (0.00%)
+
+============================================================
+  Split 6/20: train=6600 test=720
+  Test: 2022-01-06 12:00:00 -> 2022-04-18 14:00:00
+  Price range: 89.59 - 298.64
+============================================================
+  Momentum signals: 638/720 (88.6%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2089 D=0.0000 val_MAE=0.1158 *
+  epoch 2/20: G=0.1551 D=0.0000 val_MAE=0.1007 *
+  epoch 3/20: G=0.1530 D=0.0000 val_MAE=0.0992 *
+  epoch 4/20: G=0.1520 D=0.0000 val_MAE=0.0963 *
+  epoch 5/20: G=0.1514 D=0.0000 val_MAE=0.0962 *
+  epoch 6/20: G=0.1521 D=0.0000 val_MAE=0.0991
+  epoch 7/20: G=0.1510 D=0.0000 val_MAE=0.0963
+  epoch 8/20: G=0.1510 D=0.0000 val_MAE=0.0957 *
+  epoch 9/20: G=0.1503 D=0.0000 val_MAE=0.0971
+  epoch 10/20: G=0.1501 D=0.0000 val_MAE=0.1003
+  epoch 11/20: G=0.1496 D=0.0000 val_MAE=0.0964
+  epoch 12/20: G=0.1490 D=0.0000 val_MAE=0.0970
+  epoch 13/20: G=0.1491 D=0.0000 val_MAE=0.1048
+  Early stopping at epoch 13 (patience=5)
+  TFT DirAcc=0.548 (trained in 42.7s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 19/720 (2.6%)
+
+  Split 6: 9 trades, PnL=0.92%, WR=55.6%, Sharpe=0.12, MaxDD=4.52%
+    Long: 9 (0.92%), Short: 0 (0.00%)
+
+============================================================
+  Split 7/20: train=7320 test=720
+  Test: 2022-04-18 15:00:00 -> 2022-08-15 14:00:00
+  Price range: 111.62 - 141.29
+============================================================
+  Momentum signals: 667/720 (92.6%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2079 D=0.0000 val_MAE=0.1017 *
+  epoch 2/20: G=0.1559 D=0.0000 val_MAE=0.0292 *
+  epoch 3/20: G=0.1544 D=0.0000 val_MAE=0.0291 *
+  epoch 4/20: G=0.1540 D=0.0000 val_MAE=0.0316
+  epoch 5/20: G=0.1534 D=0.0000 val_MAE=0.0294
+  epoch 6/20: G=0.1539 D=0.0000 val_MAE=0.0299
+  epoch 7/20: G=0.1539 D=0.0000 val_MAE=0.0311
+  epoch 8/20: G=0.1531 D=0.0000 val_MAE=0.0290 *
+  epoch 9/20: G=0.1536 D=0.0000 val_MAE=0.0399
+  epoch 10/20: G=0.1525 D=0.0000 val_MAE=0.0330
+  epoch 11/20: G=0.1519 D=0.0000 val_MAE=0.0320
+  epoch 12/20: G=0.1516 D=0.0000 val_MAE=0.0295
+  epoch 13/20: G=0.1516 D=0.0000 val_MAE=0.0310
+  Early stopping at epoch 13 (patience=5)
+  TFT DirAcc=0.499 (trained in 44.5s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 119/720 (16.5%)
+
+  Split 7: 54 trades, PnL=3.84%, WR=46.3%, Sharpe=0.27, MaxDD=5.97%
+    Long: 54 (3.84%), Short: 0 (0.00%)
+
+============================================================
+  Split 8/20: train=8040 test=720
+  Test: 2022-08-15 15:00:00 -> 2022-11-03 22:00:00
+  Price range: 101.50 - 143.80
+============================================================
+  Momentum signals: 631/720 (87.6%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1973 D=0.0000 val_MAE=0.0576 *
+  epoch 2/20: G=0.1533 D=0.0000 val_MAE=0.0391 *
+  epoch 3/20: G=0.1512 D=0.0000 val_MAE=0.0226 *
+  epoch 4/20: G=0.1506 D=0.0000 val_MAE=0.0186 *
+  epoch 5/20: G=0.1511 D=0.0000 val_MAE=0.0219
+  epoch 6/20: G=0.1509 D=0.0000 val_MAE=0.0231
+  epoch 7/20: G=0.1507 D=0.0000 val_MAE=0.0203
+  epoch 8/20: G=0.1503 D=0.0000 val_MAE=0.0227
+  epoch 9/20: G=0.1497 D=0.0000 val_MAE=0.0200
+  Early stopping at epoch 9 (patience=5)
+  TFT DirAcc=0.516 (trained in 44.8s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 281/720 (39.0%)
+
+  Split 8: 98 trades, PnL=-6.64%, WR=44.9%, Sharpe=-0.54, MaxDD=18.58%
+    Long: 98 (-6.64%), Short: 0 (0.00%)
+
+============================================================
+  Split 9/20: train=8760 test=720
+  Test: 2022-11-03 23:00:00 -> 2023-01-18 14:00:00
+  Price range: 125.75 - 153.72
+============================================================
+  Momentum signals: 637/720 (88.5%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.2075 D=0.0000 val_MAE=0.0252 *
+  epoch 2/20: G=0.1506 D=0.0000 val_MAE=0.0134 *
+  epoch 3/20: G=0.1493 D=0.0000 val_MAE=0.0105 *
+  epoch 4/20: G=0.1503 D=0.0000 val_MAE=0.0128
+  epoch 5/20: G=0.1503 D=0.0000 val_MAE=0.0170
+  epoch 6/20: G=0.1492 D=0.0000 val_MAE=0.0148
+  epoch 7/20: G=0.1486 D=0.0000 val_MAE=0.0176
+  epoch 8/20: G=0.1483 D=0.0000 val_MAE=0.0108
+  Early stopping at epoch 8 (patience=5)
+  TFT DirAcc=0.495 (trained in 48.0s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 10/720 (1.4%)
+
+  Split 9: 4 trades, PnL=1.04%, WR=75.0%, Sharpe=1.19, MaxDD=0.29%
+    Long: 4 (1.04%), Short: 0 (0.00%)
+
+============================================================
+  Split 10/20: train=9480 test=720
+  Test: 2023-01-18 15:00:00 -> 2023-04-03 20:00:00
+  Price range: 148.94 - 219.24
+============================================================
+  Momentum signals: 648/720 (90.0%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1965 D=0.0000 val_MAE=0.0232 *
+  epoch 2/20: G=0.1507 D=0.0000 val_MAE=0.0148 *
+  epoch 3/20: G=0.1498 D=0.0000 val_MAE=0.0173
+  epoch 4/20: G=0.1485 D=0.0000 val_MAE=0.0145 *
+  epoch 5/20: G=0.1490 D=0.0000 val_MAE=0.0146
+  epoch 6/20: G=0.1481 D=0.0000 val_MAE=0.0147
+  epoch 7/20: G=0.1478 D=0.0000 val_MAE=0.0144 *
+  epoch 8/20: G=0.1475 D=0.0000 val_MAE=0.0143 *
+  epoch 9/20: G=0.1469 D=0.0000 val_MAE=0.0146
+  epoch 10/20: G=0.1472 D=0.0000 val_MAE=0.0181
+  epoch 11/20: G=0.1473 D=0.0000 val_MAE=0.0172
+  epoch 12/20: G=0.1464 D=0.0000 val_MAE=0.0155
+  epoch 13/20: G=0.1460 D=0.0000 val_MAE=0.0146
+  Early stopping at epoch 13 (patience=5)
+  TFT DirAcc=0.569 (trained in 54.1s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 356/720 (49.4%)
+
+  Split 10: 116 trades, PnL=19.45%, WR=50.0%, Sharpe=1.81, MaxDD=6.87%
+    Long: 116 (19.45%), Short: 0 (0.00%)
+
+============================================================
+  Split 11/20: train=10200 test=720
+  Test: 2023-04-03 21:00:00 -> 2023-06-19 12:00:00
+  Price range: 213.74 - 252.59
+============================================================
+  Momentum signals: 637/720 (88.5%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1903 D=0.0000 val_MAE=0.0185 *
+  epoch 2/20: G=0.1494 D=0.0000 val_MAE=0.0254
+  epoch 3/20: G=0.1499 D=0.0000 val_MAE=0.0186
+  epoch 4/20: G=0.1488 D=0.0000 val_MAE=0.0171 *
+  epoch 5/20: G=0.1485 D=0.0000 val_MAE=0.0193
+  epoch 6/20: G=0.1478 D=0.0000 val_MAE=0.0179
+  epoch 7/20: G=0.1477 D=0.0000 val_MAE=0.0306
+  epoch 8/20: G=0.1471 D=0.0000 val_MAE=0.0222
+  epoch 9/20: G=0.1467 D=0.0000 val_MAE=0.0200
+  Early stopping at epoch 9 (patience=5)
+  TFT DirAcc=0.521 (trained in 50.6s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 294/720 (40.8%)
+
+  Split 11: 102 trades, PnL=14.61%, WR=51.0%, Sharpe=1.82, MaxDD=3.25%
+    Long: 102 (14.61%), Short: 0 (0.00%)
+
+============================================================
+  Split 12/20: train=10920 test=720
+  Test: 2023-06-19 13:00:00 -> 2023-08-29 18:00:00
+  Price range: 234.47 - 272.12
+============================================================
+  Momentum signals: 637/720 (88.5%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1848 D=0.0000 val_MAE=0.0663 *
+  epoch 2/20: G=0.1513 D=0.0000 val_MAE=0.0195 *
+  epoch 3/20: G=0.1488 D=0.0000 val_MAE=0.0149 *
+  epoch 4/20: G=0.1491 D=0.0000 val_MAE=0.0206
+  epoch 5/20: G=0.1485 D=0.0000 val_MAE=0.0330
+  epoch 6/20: G=0.1485 D=0.0000 val_MAE=0.0152
+  epoch 7/20: G=0.1481 D=0.0000 val_MAE=0.0170
+  epoch 8/20: G=0.1472 D=0.0000 val_MAE=0.0195
+  Early stopping at epoch 8 (patience=5)
+  TFT DirAcc=0.555 (trained in 53.4s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 338/720 (46.9%)
+
+  Split 12: 114 trades, PnL=1.74%, WR=44.7%, Sharpe=0.25, MaxDD=6.55%
+    Long: 114 (1.74%), Short: 0 (0.00%)
+
+============================================================
+  Split 13/20: train=11640 test=720
+  Test: 2023-08-29 19:00:00 -> 2023-11-09 10:00:00
+  Price range: 250.03 - 278.15
+============================================================
+  Momentum signals: 628/720 (87.2%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1897 D=0.0000 val_MAE=0.0244 *
+  epoch 2/20: G=0.1497 D=0.0000 val_MAE=0.0177 *
+  epoch 3/20: G=0.1490 D=0.0000 val_MAE=0.0188
+  epoch 4/20: G=0.1488 D=0.0000 val_MAE=0.0181
+  epoch 5/20: G=0.1487 D=0.0000 val_MAE=0.0152 *
+  epoch 6/20: G=0.1488 D=0.0000 val_MAE=0.0170
+  epoch 7/20: G=0.1480 D=0.0000 val_MAE=0.0189
+  epoch 8/20: G=0.1473 D=0.0000 val_MAE=0.0226
+  epoch 9/20: G=0.1475 D=0.0000 val_MAE=0.0212
+  epoch 10/20: G=0.1470 D=0.0000 val_MAE=0.0147 *
+  epoch 11/20: G=0.1465 D=0.0000 val_MAE=0.0160
+  epoch 12/20: G=0.1464 D=0.0000 val_MAE=0.0180
+  epoch 13/20: G=0.1459 D=0.0000 val_MAE=0.0155
+  epoch 14/20: G=0.1457 D=0.0000 val_MAE=0.0176
+  epoch 15/20: G=0.1451 D=0.0000 val_MAE=0.0152
+  Early stopping at epoch 15 (patience=5)
+  TFT DirAcc=0.525 (trained in 67.0s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 77/720 (10.7%)
+
+  Split 13: 33 trades, PnL=2.82%, WR=48.5%, Sharpe=1.05, MaxDD=1.04%
+    Long: 33 (2.82%), Short: 0 (0.00%)
+
+============================================================
+  Split 14/20: train=12360 test=720
+  Test: 2023-11-09 11:00:00 -> 2024-01-23 16:00:00
+  Price range: 256.00 - 288.07
+============================================================
+  Momentum signals: 643/720 (89.3%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1826 D=0.0000 val_MAE=0.0165 *
+  epoch 2/20: G=0.1501 D=0.0000 val_MAE=0.0165 *
+  epoch 3/20: G=0.1482 D=0.0000 val_MAE=0.0202
+  epoch 4/20: G=0.1490 D=0.0000 val_MAE=0.0247
+  epoch 5/20: G=0.1504 D=0.0000 val_MAE=0.0218
+  epoch 6/20: G=0.1482 D=0.0000 val_MAE=0.0220
+  epoch 7/20: G=0.1478 D=0.0000 val_MAE=0.0171
+  Early stopping at epoch 7 (patience=5)
+  TFT DirAcc=0.491 (trained in 59.7s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 222/720 (30.8%)
+
+  Split 14: 82 trades, PnL=-3.23%, WR=45.1%, Sharpe=-0.66, MaxDD=5.06%
+    Long: 82 (-3.23%), Short: 0 (0.00%)
+
+============================================================
+  Split 15/20: train=13080 test=720
+  Test: 2024-01-23 17:00:00 -> 2024-04-05 23:00:00
+  Price range: 272.10 - 306.83
+============================================================
+  Momentum signals: 623/720 (86.5%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1889 D=0.0000 val_MAE=0.0346 *
+  epoch 2/20: G=0.1498 D=0.0000 val_MAE=0.0174 *
+  epoch 3/20: G=0.1486 D=0.0000 val_MAE=0.0165 *
+  epoch 4/20: G=0.1494 D=0.0000 val_MAE=0.0194
+  epoch 5/20: G=0.1481 D=0.0000 val_MAE=0.0127 *
+  epoch 6/20: G=0.1496 D=0.0000 val_MAE=0.0138
+  epoch 7/20: G=0.1477 D=0.0000 val_MAE=0.0161
+  epoch 8/20: G=0.1480 D=0.0000 val_MAE=0.0191
+  epoch 9/20: G=0.1485 D=0.0000 val_MAE=0.0137
+  epoch 10/20: G=0.1474 D=0.0000 val_MAE=0.0127 *
+  epoch 11/20: G=0.1475 D=0.0000 val_MAE=0.0158
+  epoch 12/20: G=0.1470 D=0.0000 val_MAE=0.0173
+  epoch 13/20: G=0.1468 D=0.0000 val_MAE=0.0133
+  epoch 14/20: G=0.1465 D=0.0000 val_MAE=0.0143
+  epoch 15/20: G=0.1464 D=0.0000 val_MAE=0.0127
+  Early stopping at epoch 15 (patience=5)
+  TFT DirAcc=0.539 (trained in 81.3s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 298/720 (41.4%)
+
+  Split 15: 102 trades, PnL=-1.13%, WR=41.2%, Sharpe=-0.27, MaxDD=5.01%
+    Long: 102 (-1.13%), Short: 0 (0.00%)
+
+============================================================
+  Split 16/20: train=13800 test=720
+  Test: 2024-04-08 10:00:00 -> 2024-06-20 15:00:00
+  Price range: 304.75 - 323.90
+============================================================
+  Momentum signals: 613/720 (85.1%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1822 D=0.0000 val_MAE=0.0262 *
+  epoch 2/20: G=0.1498 D=0.0000 val_MAE=0.0154 *
+  epoch 3/20: G=0.1490 D=0.0000 val_MAE=0.0154 *
+  epoch 4/20: G=0.1482 D=0.0000 val_MAE=0.0146 *
+  epoch 5/20: G=0.1482 D=0.0000 val_MAE=0.0248
+  epoch 6/20: G=0.1479 D=0.0000 val_MAE=0.0174
+  epoch 7/20: G=0.1477 D=0.0000 val_MAE=0.0190
+  epoch 8/20: G=0.1479 D=0.0000 val_MAE=0.0175
+  epoch 9/20: G=0.1475 D=0.0000 val_MAE=0.0224
+  Early stopping at epoch 9 (patience=5)
+  TFT DirAcc=0.459 (trained in 67.4s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 255/720 (35.4%)
+
+  Split 16: 93 trades, PnL=-4.11%, WR=36.6%, Sharpe=-0.99, MaxDD=4.62%
+    Long: 93 (-4.11%), Short: 0 (0.00%)
+
+============================================================
+  Split 17/20: train=14520 test=720
+  Test: 2024-06-20 16:00:00 -> 2024-08-30 21:00:00
+  Price range: 254.53 - 329.98
+============================================================
+  Momentum signals: 652/720 (90.6%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1869 D=0.0000 val_MAE=0.0544 *
+  epoch 2/20: G=0.1495 D=0.0000 val_MAE=0.0267 *
+  epoch 3/20: G=0.1482 D=0.0000 val_MAE=0.0240 *
+  epoch 4/20: G=0.1491 D=0.0000 val_MAE=0.0492
+  epoch 5/20: G=0.1481 D=0.0000 val_MAE=0.0258
+  epoch 6/20: G=0.1475 D=0.0000 val_MAE=0.0238 *
+  epoch 7/20: G=0.1473 D=0.0000 val_MAE=0.0241
+  epoch 8/20: G=0.1474 D=0.0000 val_MAE=0.0292
+  epoch 9/20: G=0.1477 D=0.0000 val_MAE=0.0249
+  epoch 10/20: G=0.1465 D=0.0000 val_MAE=0.0237 *
+  epoch 11/20: G=0.1463 D=0.0000 val_MAE=0.0240
+  epoch 12/20: G=0.1459 D=0.0000 val_MAE=0.0235 *
+  epoch 13/20: G=0.1456 D=0.0000 val_MAE=0.0244
+  epoch 14/20: G=0.1451 D=0.0000 val_MAE=0.0235 *
+  epoch 15/20: G=0.1448 D=0.0000 val_MAE=0.0236
+  epoch 16/20: G=0.1442 D=0.0000 val_MAE=0.0235
+  epoch 17/20: G=0.1438 D=0.0000 val_MAE=0.0252
+  epoch 18/20: G=0.1433 D=0.0000 val_MAE=0.0243
+  epoch 19/20: G=0.1426 D=0.0000 val_MAE=0.0239
+  Early stopping at epoch 19 (patience=5)
+  TFT DirAcc=0.529 (trained in 89.7s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 4/720 (0.6%)
+
+  Split 17: 2 trades, PnL=-0.49%, WR=0.0%, Sharpe=-1.92, MaxDD=0.42%
+    Long: 2 (-0.49%), Short: 0 (0.00%)
+
+============================================================
+  Split 18/20: train=15240 test=720
+  Test: 2024-08-30 22:00:00 -> 2024-11-12 15:00:00
+  Price range: 234.95 - 273.45
+============================================================
+  Momentum signals: 630/720 (87.5%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1791 D=0.0000 val_MAE=0.0365 *
+  epoch 2/20: G=0.1494 D=0.0000 val_MAE=0.0279 *
+  epoch 3/20: G=0.1491 D=0.0000 val_MAE=0.0263 *
+  epoch 4/20: G=0.1480 D=0.0000 val_MAE=0.0233 *
+  epoch 5/20: G=0.1477 D=0.0000 val_MAE=0.0233
+  epoch 6/20: G=0.1480 D=0.0000 val_MAE=0.0234
+  epoch 7/20: G=0.1472 D=0.0000 val_MAE=0.0226 *
+  epoch 8/20: G=0.1481 D=0.0000 val_MAE=0.0228
+  epoch 9/20: G=0.1474 D=0.0000 val_MAE=0.0244
+  epoch 10/20: G=0.1469 D=0.0000 val_MAE=0.0289
+  epoch 11/20: G=0.1467 D=0.0000 val_MAE=0.0243
+  epoch 12/20: G=0.1463 D=0.0000 val_MAE=0.0241
+  Early stopping at epoch 12 (patience=5)
+  TFT DirAcc=0.515 (trained in 79.4s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 233/720 (32.4%)
+
+  Split 18: 85 trades, PnL=4.96%, WR=51.8%, Sharpe=0.77, MaxDD=6.96%
+    Long: 85 (4.96%), Short: 0 (0.00%)
+
+============================================================
+  Split 19/20: train=15960 test=720
+  Test: 2024-11-12 16:00:00 -> 2025-01-27 18:00:00
+  Price range: 220.06 - 284.96
+============================================================
+  Momentum signals: 659/720 (91.5%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1748 D=0.0000 val_MAE=0.0328 *
+  epoch 2/20: G=0.1497 D=0.0000 val_MAE=0.0315 *
+  epoch 3/20: G=0.1494 D=0.0000 val_MAE=0.0405
+  epoch 4/20: G=0.1484 D=0.0000 val_MAE=0.0281 *
+  epoch 5/20: G=0.1500 D=0.0000 val_MAE=0.0279 *
+  epoch 6/20: G=0.1482 D=0.0000 val_MAE=0.0396
+  epoch 7/20: G=0.1476 D=0.0000 val_MAE=0.0279
+  epoch 8/20: G=0.1474 D=0.0000 val_MAE=0.0305
+  epoch 9/20: G=0.1475 D=0.0000 val_MAE=0.0314
+  epoch 10/20: G=0.1474 D=0.0000 val_MAE=0.0368
+  Early stopping at epoch 10 (patience=5)
+  TFT DirAcc=0.502 (trained in 79.9s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 150/720 (20.8%)
+
+  Split 19: 49 trades, PnL=14.02%, WR=46.9%, Sharpe=1.28, MaxDD=4.39%
+    Long: 49 (14.02%), Short: 0 (0.00%)
+
+============================================================
+  Split 20/20: train=16680 test=720
+  Test: 2025-01-27 19:00:00 -> 2025-03-25 09:00:00
+  Price range: 274.20 - 329.10
+============================================================
+  Momentum signals: 630/720 (87.5%)
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'repr' attribute with value False was provided to the `Field()` function, which has no effect in the context it was used. 'repr' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+C:\Users\Pavel Dikalov\AppData\Local\Programs\Python\Python39\lib\site-packages\pydantic\_internal\_generate_schema.py:2249: UnsupportedFieldAttributeWarning: The 'frozen' attribute with value True was provided to the `Field()` function, which has no effect in the context it was used. 'frozen' is field-specific metadata, and can only be attached to a model field using `Annotated` metadata or by assignment. This may have happened because an `Annotated` type alias using the `type` statement was used, or if the `Field()` function was attached to a single member of a union type.
+  warnings.warn(
+  epoch 1/20: G=0.1733 D=0.0000 val_MAE=0.0246 *
+  epoch 2/20: G=0.1500 D=0.0000 val_MAE=0.0396
+  epoch 3/20: G=0.1494 D=0.0000 val_MAE=0.0250
+  epoch 4/20: G=0.1487 D=0.0000 val_MAE=0.0242 *
+  epoch 5/20: G=0.1484 D=0.0000 val_MAE=0.0242
+  epoch 6/20: G=0.1480 D=0.0000 val_MAE=0.0242 *
+  epoch 7/20: G=0.1484 D=0.0000 val_MAE=0.0242
+  epoch 8/20: G=0.1485 D=0.0000 val_MAE=0.0370
+  epoch 9/20: G=0.1475 D=0.0000 val_MAE=0.0242
+  epoch 10/20: G=0.1474 D=0.0000 val_MAE=0.0254
+  epoch 11/20: G=0.1471 D=0.0000 val_MAE=0.0262
+  Early stopping at epoch 11 (patience=5)
+  TFT DirAcc=0.525 (trained in 84.0s)
+  TFT signals: 703/720 (97.6%)
+  Final signals (long_only_combined): 204/720 (28.3%)
+
+  Split 20: 77 trades, PnL=2.60%, WR=49.4%, Sharpe=0.41, MaxDD=3.13%
+    Long: 77 (2.60%), Short: 0 (0.00%)
+
+======================================================================
+  STRATEGY RESULTS: SBER H1 h=4 | mode=long_only_combined
+======================================================================
+  Total trades:          1455
+  Total PnL:             56.80% (125.20 pts)
+  Avg trade:             0.0390%
+  Win rate:              47.5%
+  Profit factor:         1.150
+  Sharpe ratio:          0.690
+  Max drawdown:          20.71%
+  Avg bars held:         4.0
+  Max consec. losses:    9
+  Long:  1455 trades (56.80%)
+  Short: 0 trades (0.00%)
+
+  YEARLY BREAKDOWN:
+  Year    Trades      PnL%    PnL pts  AvgTrade%     WR     PF
+  -------------------------------------------------------
+  2021       428     4.46%      14.98    0.0104% 50.0%   1.04
+  2022       172     1.10%       5.08    0.0064% 47.7%   1.01
+  2023       415    36.57%      74.01    0.0881% 48.7%   1.42
+  2024       362    10.17%      18.78    0.0281% 42.5%   1.14
+  2025        78     4.49%      12.35    0.0576% 50.0%   1.25
+  Equity chart: outputs/strategy\strategy_long_only_combined_equity.png
+
+  Files saved to outputs/strategy/
+
+  Comparison saved: outputs/strategy\strategy_comparison.csv

@@ -1,0 +1,2 @@
+experiment,seq_len,lr_g,lr_d,generator,adv_weight,l1_weight,cls_weight,q_weight,MAE,MAPE,DirAcc,PinballLoss,time_sec,n_features,train_samples,test_samples
+seq_12,12,0.001,5e-05,tst,1.0,0.4,0.2,1.0,0.7096977829933167,213.8043975830078,0.47632234837995013,0.006642010062932968,452.9,28,14114,3624

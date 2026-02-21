@@ -1,0 +1,122 @@
+phase,stage,experiment,ticker,timeframe,generator,seq_len,lr_g,lr_d,MAE,MAPE,DirAcc,PinballLoss,time_sec,notes
+1,1,1a_baseline_lstm,SBER,M5,lstm,17,1e-3,1e-4,0.0077,5.2873,0.484,0.0015,795,Baseline LSTM. Early stop epoch 9.
+1,1,1b_baseline_tst,SBER,M5,tst,17,1e-3,1e-4,0.0040,1.0335,0.490,0.0016,933,Baseline TST. Early stop epoch 11. BEST_GEN=tst.
+1,2,2a_seq12,SBER,M5,tst,12,1e-3,1e-4,0.0041,1.2887,0.489,0.0015,797,Best DirAcc. BEST_SEQ_LEN=12.
+1,2,2b_seq24,SBER,M5,tst,24,1e-3,1e-4,0.0040,1.0641,0.488,0.0015,1293,
+1,2,2c_seq48,SBER,M5,tst,48,1e-3,1e-4,0.0040,1.1019,0.481,0.0014,740,
+1,2,2d_seq78,SBER,M5,tst,78,1e-3,1e-4,0.0040,1.0737,0.484,0.0014,855,
+1,2,2e_seq156,SBER,M5,tst,156,1e-3,1e-4,0.0046,2.1137,0.481,0.0180,718,Worst MAE -- overfitting on long windows.
+1,3,3a_lr_5e4_5e5,SBER,M5,tst,12,5e-4,5e-5,0.0041,1.1940,0.485,0.0014,1274,Conservative.
+1,3,3b_lr_1e3_1e4,SBER,M5,tst,12,1e-3,1e-4,0.0041,1.0012,0.483,0.0014,747,Default baseline.
+1,3,3c_lr_2e3_2e4,SBER,M5,tst,12,2e-3,2e-4,0.0040,1.0297,0.483,0.0014,865,Aggressive -- no NaN.
+1,3,3d_lr_5e4_1e4,SBER,M5,tst,12,5e-4,1e-4,0.0044,1.6216,0.488,0.0014,966,G slower than D.
+1,3,3e_lr_1e3_5e5,SBER,M5,tst,12,1e-3,5e-5,0.0040,1.0012,0.488,0.0016,628,G faster than D. BEST_LR. Fastest.
+2,4,4a_lw_baseline,SBER,M5,tst,12,1e-3,5e-5,0.0041,,,0.0017,376,adv=1.0 l1=0.4 cls=0.2 q=0.3 (baseline weights).
+2,4,4b_lw_more_l1,SBER,M5,tst,12,1e-3,5e-5,0.0042,,,0.0017,520,adv=1.0 l1=1.0 cls=0.2 q=0.3. More L1.
+2,4,4c_lw_more_cls,SBER,M5,tst,12,1e-3,5e-5,0.0040,,,0.0014,1139,adv=0.5 l1=0.4 cls=0.5 q=0.3. More cls.
+2,4,4d_lw_more_q,SBER,M5,tst,12,1e-3,5e-5,0.0040,,,0.0014,855,adv=1.0 l1=0.4 cls=0.2 q=1.0. BEST: best MAE+Pinball.
+2,4,4e_lw_min_adv,SBER,M5,tst,12,1e-3,5e-5,0.0041,,,0.0014,635,adv=0.3 l1=0.8 cls=0.1 q=0.5. Min adv.
+2,4,4f_lw_max_adv,SBER,M5,tst,12,1e-3,5e-5,0.0049,,,0.0028,470,adv=2.0 l1=0.2 cls=0.1 q=0.1. Worst MAE.
+2,5,5a_abl_full,SBER,M5,tst,12,1e-3,5e-5,0.0041,1.3255,0.485,0.0016,554,Full pipeline (all features on).
+2,5,5b_abl_no_fourier,SBER,M5,tst,12,1e-3,5e-5,0.0041,,0.485,0.0016,550,No Fourier: neutral.
+2,5,5c_abl_no_ae,SBER,M5,tst,12,1e-3,5e-5,0.0040,,0.485,0.0015,924,No Autoencoder: IMPROVES MAE (42 feats vs 74). AE is noise.
+2,5,5d_abl_no_pca,SBER,M5,tst,12,1e-3,5e-5,0.0041,,0.485,0.0016,549,No PCA: neutral.
+2,5,5e_abl_no_corr,SBER,M5,tst,12,1e-3,5e-5,0.0678,,0.485,0.0019,662,No correlates: MAE x17. Correlates are CRITICAL.
+2,5,5f_abl_no_indicators,SBER,M5,tst,12,1e-3,5e-5,0.0041,,0.485,0.0016,618,No technical indicators: neutral.
+3,6,6a_GMKN_M5,GMKN,M5,tst,12,1e-3,5e-5,0.0156,,0.469,,723,Multi-ticker. Worst DirAcc.
+3,6,6b_LKOH_M5,LKOH,M5,tst,12,1e-3,5e-5,0.0048,,0.471,,490,Multi-ticker.
+3,6,6c_GAZP_M5,GAZP,M5,tst,12,1e-3,5e-5,0.0068,,0.493,,713,Multi-ticker. Best DirAcc (49.3%).
+3,6,6d_RTSF_M5,RTSF,M5,tst,12,1e-3,5e-5,0.0053,,0.484,,599,Multi-ticker (futures index).
+3,6.5,6.5a_SBER_D1,SBER,D1,tst,12,1e-3,5e-5,0.1243,,0.483,,88,Daily: few bars (1743). High MAE.
+3,6.5,6.5b_SBER_H1,SBER,H1,tst,12,1e-3,5e-5,0.0425,,0.516,,383,Hourly: BEST DirAcc 51.6%. 17738 bars.
+3,6.5,6.5c_SBER_M5,SBER,M5,tst,12,1e-3,5e-5,0.0040,,0.483,,824,5-min: best MAE 0.0040. 206597 bars.
+3,7,7a_SBER_2006_2012,SBER,M5,tst,12,1e-3,5e-5,0.0881,,0.474,,757,2008 crisis period. Worst MAE.
+3,7,7b_SBER_2012_2018,SBER,M5,tst,12,1e-3,5e-5,0.0077,,0.485,,1170,Bull market. Good stability.
+3,7,7c_SBER_2015_2021,SBER,M5,tst,12,1e-3,5e-5,0.0040,,0.485,,991,Baseline period. Best.
+3,7,7d_SBER_2006_2021,SBER,M5,tst,12,1e-3,5e-5,0.0005,88.6,0.483,,1251,Full history (425K bars). Lowest MAE but high MAPE.
+4,8,8_optuna_best,SBER,M5,tst,,,,,,,,,,"Optuna 17/30 trials. Best MAE=0.0041158 (trial 13). Marginal improvement vs manual tuning."
+4,9,9a_wf_split1,SBER,M5,tst,12,1e-3,5e-5,0.0054,1.099,0.480,0.00222,,Walk-forward split 1. train=39K test=9.4K.
+4,9,9b_wf_split2,SBER,M5,tst,12,1e-3,5e-5,0.0059,1.358,0.481,0.00221,,Walk-forward split 2. train=48K test=9.4K.
+4,9,9c_wf_split3,SBER,M5,tst,12,1e-3,5e-5,0.0047,1.686,0.491,0.00150,,Walk-forward split 3. train=58K test=9.4K.
+4,9,9d_wf_split4,SBER,M5,tst,12,1e-3,5e-5,0.0049,1.201,0.486,0.00172,,Walk-forward split 4. train=67K test=9.4K.
+4,9,9e_wf_split5,SBER,M5,tst,12,1e-3,5e-5,14.409,7403.3,0.491,0.02205,,Walk-forward split 5 ANOMALY. Edge-of-data issue. train=76K test=9.4K.
+4,10,10a_naive,SBER,M5,,,,,0.000759,1.000,0.029,,,Benchmark: Naive (delta=0). Strongest MAE baseline.
+4,10,10b_random_walk,SBER,M5,,,,,0.001312,4.718,0.485,,,Benchmark: Random Walk.
+4,10,10c_sma21,SBER,M5,,,,,0.000787,1.235,0.471,,,Benchmark: SMA(21) delta.
+4,10,10d_mean_revert,SBER,M5,,,,,0.001062,2.808,0.503,,,Benchmark: Mean Reversion. Best DirAcc (50.3%).
+4,10,10e_gan_tst,SBER,M5,tst,12,1e-3,5e-5,0.004001,1.015,0.488,,,GAN (TST) vs benchmarks. MAE > naive (expected for HF). DirAcc near random.
+4,11,11a_repeat,SBER,M5,tst,12,1e-3,5e-5,,,,,,"Stress: Repeatability PASS. MAE spread 12.6% < 15% (2 valid runs: 0.004185 0.004746)."
+4,11,11b_noise,SBER,M5,tst,12,1e-3,5e-5,,,,,,"Stress: Noise PASS. 0% degradation with 1% Gaussian noise."
+4,11,11c_short_data,SBER,M5,tst,12,1e-3,5e-5,0.01108,,0.483,,348,Stress: Short data (3y) PASS. MAE higher but model works.
+4,11,11d_small_batch,SBER,M5,tst,12,1e-3,5e-5,0.003995,,0.484,,7757,Stress: Small batch (32) PASS. Delta 4.5% < 30%.
+4,11,11e_few_corr,SBER,M5,tst,12,1e-3,5e-5,0.004109,,0.487,,833,Stress: Few correlates (2) PASS. MAE ~same.
+A,0,A0_simplify,SBER,H1,,,,,,,,,,Pipeline simplified: use_fourier=False use_pca=False ae_epochs=0. ~40% faster.
+A,1,A1_baseline_tst,SBER,H1,tst,12,1e-3,5e-5,0.7097,213.8,0.476,0.0066,453,TST DIVERGED on H1. MAE 0.71.
+A,1,A1_baseline_lstm,SBER,H1,lstm,12,1e-3,5e-5,0.0164,3.255,0.512,0.0053,445,LSTM wins on H1. DirAcc 51.2%. BEST_GEN_H1=lstm.
+A,2,A2_seq3,SBER,H1,lstm,3,1e-3,5e-5,0.2284,,0.477,0.0049,297,seq=3: too short for H1.
+A,2,A2_seq6,SBER,H1,lstm,6,1e-3,5e-5,0.0668,,0.474,0.0048,321,seq=6: poor DirAcc.
+A,2,A2_seq12,SBER,H1,lstm,12,1e-3,5e-5,0.0149,,0.503,0.0049,320,BEST_SEQ_LEN_H1=12. Best MAE + DirAcc > 50%.
+A,2,A2_seq24,SBER,H1,lstm,24,1e-3,5e-5,0.0222,,0.476,0.0066,285,seq=24: DirAcc drops.
+A,2,A2_seq48,SBER,H1,lstm,48,1e-3,5e-5,0.1577,,0.511,0.0202,266,seq=48: DirAcc 51.1% but MAE 10x worse.
+A,3,A3_lr_5e4_5e5,SBER,H1,lstm,12,5e-4,5e-5,0.0782,,0.509,0.0165,276,LR sweep.
+A,3,A3_lr_1e3_1e4,SBER,H1,lstm,12,1e-3,1e-4,0.0313,,0.512,0.0140,278,LR sweep.
+A,3,A3_lr_1e3_5e5,SBER,H1,lstm,12,1e-3,5e-5,0.0147,,0.508,0.0056,302,LR sweep.
+A,3,A3_lr_2e3_2e4,SBER,H1,lstm,12,2e-3,2e-4,0.0146,,0.515,0.0048,323,BEST_LR_H1. All 5 combos DirAcc >= 50%!
+A,3,A3_lr_5e4_1e4,SBER,H1,lstm,12,5e-4,1e-4,0.0236,,0.500,0.0108,302,LR sweep.
+A,4,A4_lw_a1_l04_c02_q03,SBER,H1,lstm,12,2e-3,2e-4,0.0161,,0.512,0.0048,308,BEST_LOSS_H1. q=0.3 better than q=1.0 on H1.
+A,4,A4_lw_a1_l04_c02_q1,SBER,H1,lstm,12,2e-3,2e-4,0.0188,,0.477,0.0048,306,q=1.0 HURTS DirAcc on H1.
+A,4,A4_lw_a1_l1_c02_q03,SBER,H1,lstm,12,2e-3,2e-4,0.0143,,0.510,0.0050,318,More L1.
+A,4,A4_lw_a05_l04_c05_q03,SBER,H1,lstm,12,2e-3,2e-4,0.0144,,0.506,0.0049,322,More cls.
+A,4,A4_lw_a03_l08_c01_q05,SBER,H1,lstm,12,2e-3,2e-4,0.0141,,0.499,0.0050,309,Min adv. Near 50% DirAcc.
+A,4,A4_lw_a2_l02_c01_q01,SBER,H1,lstm,12,2e-3,2e-4,0.0390,,0.516,0.0074,290,Max adv. Best DirAcc 51.6% but worst MAE.
+A,5,A5_wf_split1,SBER,H1,lstm,12,2e-3,2e-4,0.0675,,0.532,0.0119,,Walk-forward split 1. DirAcc 53.2%.
+A,5,A5_wf_split2,SBER,H1,lstm,12,2e-3,2e-4,0.0241,,0.472,0.0114,,Walk-forward split 2. DirAcc 47.2%.
+A,5,A5_wf_split3,SBER,H1,lstm,12,2e-3,2e-4,0.0590,,0.496,0.0118,,Walk-forward split 3. DirAcc 49.6%.
+A,5,A5_wf_split4,SBER,H1,lstm,12,2e-3,2e-4,0.1246,,0.516,0.0077,,Walk-forward split 4. DirAcc 51.6%.
+A,5,A5_wf_split5,SBER,H1,lstm,12,2e-3,2e-4,0.0649,,0.504,0.0061,,Walk-forward split 5. DirAcc 50.4%.
+A,5,A5_wf_avg,SBER,H1,lstm,12,2e-3,2e-4,0.0680,,0.504,0.0098,,Walk-forward AVERAGE. DirAcc 50.4% (PASS). Spread 6.0%.
+A,6,A6_naive,SBER,H1,,,,0.0026,,,,,Benchmark: Naive (delta=0). MAE=0.0026.
+A,6,A6_random_walk,SBER,H1,,,,0.0043,,0.512,,,Benchmark: Random Walk. DirAcc 51.2%.
+A,6,A6_sma21,SBER,H1,,,,0.0027,,0.500,,,Benchmark: SMA(21). DirAcc 50.0%.
+A,6,A6_mean_revert,SBER,H1,,,,0.0038,,0.523,,,Benchmark: Mean Reversion. DirAcc 52.3%.
+A,6,A6_gan_lstm,SBER,H1,lstm,12,2e-3,2e-4,0.0181,,0.484,,,GAN DirAcc 48.4% < MeanReversion 52.3%. FAIL.
+A,7,A7_GAZP,GAZP,H1,lstm,12,2e-3,2e-4,0.1785,,0.470,0.0052,386,Multi-ticker. DirAcc < 50%.
+A,7,A7_LKOH,LKOH,H1,lstm,12,2e-3,2e-4,0.0387,,0.469,0.0052,400,Multi-ticker. DirAcc < 50%.
+A,7,A7_RTSF,RTSF,H1,lstm,12,2e-3,2e-4,0.2738,,0.472,,541,Multi-ticker. DirAcc < 50%. 0/3 pass.
+C1a,SBER,H1,lstm,supervised,0.01386997289955616,1.4254063367843628,0.49155358626419277,0.005046981852501631,280.9,Supervised LSTM + Huber + cls + q
+C1b,SBER,H1,lstm,supervised,0.013756757602095604,1.4082415103912354,0.5059540293547494,0.004914864820117752,267.7,Supervised LSTM + MSE + cls + q
+C1c,SBER,H1,lstm,supervised,0.013579243794083595,1.1768302917480469,0.48906120188313484,0.04243839345872402,261.8,Supervised LSTM + Huber only (minimal)
+C1d,SBER,H1,tst,supervised,0.014027192257344723,1.6377437114715576,0.4829687067294378,0.004941965453326702,264.0,Supervised TST + Huber + cls + q
+C2a,SBER,H1,lstm,classifier,0.033410392701625824,10.164348602294922,0.5101080033231792,0.016705196040372055,252.1,Classifier 2-class (up/down) + CrossEntropy
+C2b,SBER,H1,lstm,classifier,0.013452837243676186,1.0010418891906738,0.5156466352810856,0.006726418466617663,244.8,Classifier 3-class (up/flat/down) + CrossEntropy
+C2c,SBER,H1,lstm,classifier,0.017193365842103958,3.0487167835235596,0.4898919966768208,0.008596682921051979,246.9,Classifier 2-class + FocalLoss(gamma=2)
+C2d,SBER,H1,lstm,classifier,0.033410392701625824,10.164348602294922,0.5101080033231792,0.016705196040372055,251.7,Classifier 2-class + CE (confidence filtering at eval)
+C3a,SBER,H1,tst,cross_attn,0.01390775665640831,1.4244552850723267,0.4965383550263085,0.005047796216482918,292.7,"CrossAttn d=64, h=4, L=2"
+C3b,SBER,H1,tst,cross_attn,0.015376492403447628,2.472435235977173,0.5095541401273885,0.004685833662127455,279.7,"CrossAttn d=32, h=2, L=1 (small)"
+C3c,SBER,H1,tst,cross_attn,0.014512267895042896,2.021381139755249,0.5153697036831902,0.004813866689801216,289.0,CrossAttn d=64 + supervised loss
+C4a,SBER,H1,lstm,tft,0.013726404868066311,1.3136966228485107,0.4882304070894489,0.004786527482792735,294.7,"TFT d=32, h=2, 1 LSTM layer (minimal)"
+C4b,SBER,H1,lstm,tft,0.013505927287042141,1.2057267427444458,0.5253392412074218,0.00515878953350087,277.8,"TFT d=64, h=4, 2 LSTM layers (full)"
+C4c,SBER,H1,lstm,tft,0.013726404868066311,1.3136966228485107,0.4882304070894489,0.004786527482792735,280.6,TFT d=32 (print VSN weights)
+D1a,tft,0.003947662189602852,1.0454760789871216,0.4936489881037016,0.0015175093431025743,266.7,17,166022,42211,TFT d=64 single horizon (baseline re-run)
+D1b,tft,0.005778485133002202,nan,0.4937788837539993,nan,179.1,17,166022,42211,"TFT d=64 multi-horizon (1,2,4) joint training"
+D1c,tft,0.003947662189602852,1.0454760789871216,0.4936489881037016,0.0015175093431025743,265.5,17,166022,42211,TFT d=64 2-bar-ahead only
+D1d,tft,0.003947662189602852,1.0454760789871216,0.4936489881037016,0.0015175093431025743,291.5,17,166022,42211,TFT d=64 4-bar-ahead only
+D1c,tft,0.0055121066980063915,1.0220340490341187,0.4990876128634737,0.001934814111640056,296.8,17,166022,42211,TFT d=64 2-bar-ahead only
+D1d,tft,0.007753288373351097,1.0609534978866577,0.5072164948453608,0.003047981997951865,145.8,17,166022,42211,TFT d=64 4-bar-ahead only
+D2a,tft,0.003947662189602852,1.0454760789871216,0.4936489881037016,0.0015175093431025743,272.4,17,166022,42211,TFT d=64 raw delta target (baseline = C4b)
+D2b,tft,nan,nan,nan,nan,0,0,0,0,TFT d=64 delta/ATR(14) target
+D2c,tft,nan,nan,nan,nan,0,0,0,0,TFT d=64 delta/ATR(7) target
+D2d,supervised,nan,nan,nan,nan,0,0,0,0,Supervised LSTM delta/ATR(14) target
+D2b,tft,0.010707772336900234,4.983968257904053,0.479335513531447,8.499438967555761,127.1,17,166022,42211,TFT d=64 delta/ATR(14) target
+D2c,tft,0.010707772336900234,4.983968257904053,0.479335513531447,8.499438967555761,127.8,17,166022,42211,TFT d=64 delta/ATR(7) target
+D2d,supervised,0.006299447733908892,2.5823166370391846,0.48554433859424617,11.54130783296811,42.1,17,166022,42211,Supervised LSTM delta/ATR(14) target
+D2b,tft,0.010707772336900234,4.983968257904053,0.479335513531447,8.499438967555761,128.0,17,166022,42211,TFT d=64 delta/ATR(14) target
+D2c,tft,0.00916291493922472,4.149275302886963,0.49149248779563015,29.115029050658148,145.0,17,166022,42211,TFT d=64 delta/ATR(7) target
+D2d,supervised,0.006299447733908892,2.5823166370391846,0.48554433859424617,11.54130783296811,40.2,17,166022,42211,Supervised LSTM delta/ATR(14) target
+D2b,tft,0.2335306704044342,0.9998182654380798,0.4896677567657235,0.10019350548585255,228.6,17,166022,42211,TFT d=64 delta/ATR(14) target
+D2c,tft,0.2335430085659027,1.0001354217529297,0.4896677567657235,0.10064900418122609,228.4,17,166022,42211,TFT d=64 delta/ATR(7) target
+D2d,supervised,0.2335914671421051,1.002345323562622,0.48928859187639223,0.10434539864460628,33.1,17,166022,42211,Supervised LSTM delta/ATR(14) target
+D3a,tft,0.003947662189602852,1.0454760789871216,0.4936489881037016,0.0015175093431025743,269.9,17,166022,42211,All volume (range+gap+vol+vwap+ATR+OBV)
+D3b,tft,0.003955359570682049,1.067987084388733,0.48848286648656336,0.0013860755910476048,146.4,13,166022,42211,range + gap only (top-2 VSN features)
+D3c,tft,0.003950527403503656,1.0266010761260986,0.48630266837290864,0.0015106027713045478,235.1,15,166022,42211,range + gap + ATR + OBV (drop low-weight)
+D3d,tft,0.003949517384171486,1.0353957414627075,0.48305606900800985,0.0014218090412517388,232.3,11,166022,42211,No volume features at all

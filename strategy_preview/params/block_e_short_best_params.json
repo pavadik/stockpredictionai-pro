@@ -1,0 +1,16 @@
+{
+  "tf1": 180,
+  "tf2": 45,
+  "lookback": 245,
+  "length": 55,
+  "lookback2": 70,
+  "length2": 95,
+  "min_s": 330,
+  "max_s": 650,
+  "koeff1": 1.0000069354782914,
+  "koeff2": 0.9457871919584999,
+  "mmcoff": 17,
+  "exitday": 0,
+  "sdel_day": 1,
+  "exit_week": 0
+}

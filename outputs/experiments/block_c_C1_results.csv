@@ -1,0 +1,5 @@
+experiment,model_type,loss_fn,generator,description,MAE,MAPE,DirAcc,PinballLoss,HighConfDirAcc,HighConfCount,HighConfPct,time_sec,n_features,train_samples,test_samples
+C1a,supervised,huber,lstm,Supervised LSTM + Huber + cls + q,0.01386997289955616,1.4254063367843628,0.49155358626419277,0.005046981852501631,,,,280.9,16,14238,3624
+C1b,supervised,mse,lstm,Supervised LSTM + MSE + cls + q,0.013756757602095604,1.4082415103912354,0.5059540293547494,0.004914864820117752,,,,267.7,16,14238,3624
+C1c,supervised,huber,lstm,Supervised LSTM + Huber only (minimal),0.013579243794083595,1.1768302917480469,0.48906120188313484,0.04243839345872402,,,,261.8,16,14238,3624
+C1d,supervised,huber,tst,Supervised TST + Huber + cls + q,0.014027192257344723,1.6377437114715576,0.4829687067294378,0.004941965453326702,,,,264.0,16,14238,3624

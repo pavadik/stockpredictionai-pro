@@ -1,0 +1,22 @@
+{
+  "best_mae": 0.00401140796020627,
+  "best_params": {
+    "generator": "tst",
+    "seq_len": 16,
+    "batch_size": 128,
+    "hidden_size": 32,
+    "lr_g": 0.000673447066041574,
+    "lr_d": 0.00013427747056819327,
+    "critic_steps": 5,
+    "d_model": 128,
+    "nhead": 4,
+    "num_layers_tst": 3,
+    "dropout_tst": 0.10112254591671503,
+    "l1_weight": 0.22788902059281207,
+    "cls_weight": 0.32036324161327023,
+    "q_weight": 1.3575434001340014,
+    "grad_clip": 3.603972391009846
+  },
+  "n_trials": 30,
+  "n_pruned": 0
+}

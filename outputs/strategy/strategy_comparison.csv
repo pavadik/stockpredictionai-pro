@@ -1,0 +1,2 @@
+num_trades,total_pnl_pct,total_pnl_pts,avg_trade_pct,win_rate,profit_factor,max_drawdown_pct,sharpe,long_trades,short_trades,long_pnl_pct,short_pnl_pct,avg_bars_held,max_consecutive_loss,mode
+1455,56.7965,125.1987,0.039035,0.4749,1.15,20.7099,0.69,1455,0,56.7965,0,4.0,9,long_only_combined

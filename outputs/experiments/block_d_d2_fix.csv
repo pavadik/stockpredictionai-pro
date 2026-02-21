@@ -1,0 +1,4 @@
+experiment,model_type,description,horizons,atr_target,vol_keep,MAE,MAPE,DirAcc,PinballLoss,DirAcc_norm,MAE_h1,MAE_h2,MAE_h4,DirAcc_h1,DirAcc_h2,DirAcc_h4,MAE_avg,DirAcc_avg,time_sec,n_features,train_samples,test_samples
+D2b,tft,TFT d=64 delta/ATR(14) target,"(1,)",True,all,0.010707772336900234,4.983968257904053,0.479335513531447,8.499438967555761,0.479335513531447,,,,,,,,,127.1,17,166022,42211
+D2c,tft,TFT d=64 delta/ATR(7) target,"(1,)",True,all,0.010707772336900234,4.983968257904053,0.479335513531447,8.499438967555761,0.479335513531447,,,,,,,,,127.8,17,166022,42211
+D2d,supervised,Supervised LSTM delta/ATR(14) target,"(1,)",True,all,0.006299447733908892,2.5823166370391846,0.48554433859424617,11.54130783296811,0.48554433859424617,,,,,,,,,42.1,17,166022,42211

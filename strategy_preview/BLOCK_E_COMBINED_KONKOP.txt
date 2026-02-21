@@ -1,0 +1,198 @@
+==============================================================
+  BLOCK E: Combined Strategy (LONG + SHORT) -- RTSF
+  Unified Simulation with Flip Logic
+==============================================================
+
+  Mode: single position, flip_mode=close_loss
+  Capital: 5,000,000 (shared)  Leverage: 1.0x
+  Max contracts: no cap
+
+  --- LONG Parameters ---
+  tf1=150  tf2=60  lookback=95  length=280
+  lookback2=85  length2=185  min_s=180  max_s=500
+  koeff1=0.9609  koeff2=1.0102  mmcoff=26  sdel_day=1
+
+  --- SHORT Parameters ---
+  tf1=180  tf2=45  lookback=245  length=55
+  lookback2=70  length2=95  min_s=330  max_s=650
+  koeff1=1.0000  koeff2=0.9458  mmcoff=17  sdel_day=1
+
+
+==============================================================
+  COMBINED TRAIN (2007-2018)
+==============================================================
+
+  Start date           27.02.2008    End date          29.12.2018
+  Start equity        5,000,000    End equity      16,317,588
+  Commission (round-trip)                      921,508
+
+  ─── Trade Statistics ─────────────────────────────────────
+  Total trades               401    Profit factor              1.45
+  Math. expectation      0.56 %    Avg. win/loss              2.92
+  StdDev. trade          284,030    Avg.trade/StdDev           0.10
+
+  ─── Profit / Loss ───────────────────────────────────────
+  Net profit           11,317,588    Max DD                22.94 %
+  Gross profit         36,533,888    Gross loss        -25,216,300
+
+  ─── Win / Loss Breakdown ────────────────────────────────
+  Win. trades                133    Los. trades                 268
+  Perc. winning         33.17 %    Perc. losing            66.83 %
+  Avg. win                274,691    Avg. loss              -94,091
+  Largest win           2,076,104    Largest loss          -570,565
+  Max conseq.win               4    Max conseq.loss              11
+
+  ─── Returns ─────────────────────────────────────────────
+  Total return         226.35 %
+  Annual return         11.54 %
+  Ann.ret/max.DD         0.50
+  Max DD (abs)          3,726,174
+
+  ─── Per 1 Contract ──────────────────────────────────────
+  Avg trade (1c)            71.9 pts   Total PnL (1c)        28,836 pts
+  StdDev (1c)              900.7 pts   Profit factor(1c)        1.42
+  Sharpe (1c)                1.60
+
+  ─── Position Sizing ─────────────────────────────────────
+  Avg contracts            582.1    Min / Max           43 / 2168 
+
+  ─── Holding Period ──────────────────────────────────────
+  Avg hold              108.5 hrs   Min hold              0.8 hrs
+  Max hold            18121.2 hrs   Period              10.83 yrs
+==============================================================
+
+==============================================================
+  COMBINED TEST / OOS (2019-2022)
+==============================================================
+
+  Start date           24.01.2019    End date          24.02.2022
+  Start equity        5,000,000    End equity       9,634,764
+  Commission (round-trip)                      382,832
+
+  ─── Trade Statistics ─────────────────────────────────────
+  Total trades               150    Profit factor              1.59
+  Math. expectation      0.62 %    Avg. win/loss              3.28
+  StdDev. trade          317,723    Avg.trade/StdDev           0.10
+
+  ─── Profit / Loss ───────────────────────────────────────
+  Net profit            4,634,764    Max DD                26.14 %
+  Gross profit         12,460,602    Gross loss         -7,825,838
+
+  ─── Win / Loss Breakdown ────────────────────────────────
+  Win. trades                 49    Los. trades                 101
+  Perc. winning         32.67 %    Perc. losing            67.33 %
+  Avg. win                254,298    Avg. loss              -77,484
+  Largest win           3,247,316    Largest loss          -307,108
+  Max conseq.win               4    Max conseq.loss               9
+
+  ─── Returns ─────────────────────────────────────────────
+  Total return          92.70 %
+  Annual return         23.69 %
+  Ann.ret/max.DD         0.91
+  Max DD (abs)          1,316,793
+
+  ─── Per 1 Contract ──────────────────────────────────────
+  Avg trade (1c)           113.1 pts   Total PnL (1c)        16,967 pts
+  StdDev (1c)            1,049.7 pts   Profit factor(1c)        1.70
+  Sharpe (1c)                1.32
+
+  ─── Position Sizing ─────────────────────────────────────
+  Avg contracts            363.9    Min / Max          116 / 771  
+
+  ─── Holding Period ──────────────────────────────────────
+  Avg hold               62.4 hrs   Min hold              0.8 hrs
+  Max hold              429.0 hrs   Period               3.09 yrs
+==============================================================
+
+==============================================================
+  COMBINED ALL (2007-2022)
+==============================================================
+
+  Start date           27.02.2008    End date          24.02.2022
+  Start equity        5,000,000    End equity      20,952,352
+  Commission (round-trip)                    1,304,340
+
+  ─── Trade Statistics ─────────────────────────────────────
+  Total trades               551    Profit factor              1.48
+  Math. expectation      0.58 %    Avg. win/loss              3.01
+  StdDev. trade          293,292    Avg.trade/StdDev           0.10
+
+  ─── Profit / Loss ───────────────────────────────────────
+  Net profit           15,952,352    Max DD                22.94 %
+  Gross profit         48,994,490    Gross loss        -33,042,138
+
+  ─── Win / Loss Breakdown ────────────────────────────────
+  Win. trades                182    Los. trades                 369
+  Perc. winning         33.03 %    Perc. losing            66.97 %
+  Avg. win                269,200    Avg. loss              -89,545
+  Largest win           3,247,316    Largest loss          -570,565
+  Max conseq.win               4    Max conseq.loss              11
+
+  ─── Returns ─────────────────────────────────────────────
+  Total return         319.05 %
+  Annual return         10.78 %
+  Ann.ret/max.DD         0.47
+  Max DD (abs)          3,726,174
+
+  ─── Per 1 Contract ──────────────────────────────────────
+  Avg trade (1c)            83.1 pts   Total PnL (1c)        45,803 pts
+  StdDev (1c)              942.7 pts   Profit factor(1c)        1.50
+  Sharpe (1c)                2.07
+
+  ─── Position Sizing ─────────────────────────────────────
+  Avg contracts            522.7    Min / Max           43 / 2168 
+
+  ─── Holding Period ──────────────────────────────────────
+  Avg hold               96.0 hrs   Min hold              0.8 hrs
+  Max hold            18121.2 hrs   Period              13.99 yrs
+==============================================================
+
+==============================================================
+  OOS COMPARISON
+==============================================================
+                                    TRAIN          TEST
+  Avg trade (1c)                 71.9         113.1
+  Profit factor (1c)             1.42          1.70
+  Sharpe (1c)                    1.60          1.32
+  Win rate                     33.17%        32.67%
+  Trades                          401           150
+  Net profit               11,317,588     4,634,764
+  Ann. return                  11.54%        23.69%
+  Max DD                       22.94%        26.14%
+  Ann.ret / maxDD                0.50          0.91
+  OOS decay (1c)               -57.3%
+==============================================================
+
+======================================================================================================================
+  YEAR-BY-YEAR BREAKDOWN (COMBINED, FLIP MODE)
+======================================================================================================================
+  Year     #Tr   L   S Flp       Net PnL     PF     WR%   Avg trade    Avg 1c     Tot 1c  PF 1c       MaxDD   AvgC
+  ------------------------------------------------------------------------------------------------------------------
+  2008 TR   14   9   5   0     1,091,417   2.62   50.0%      77,958      85.3      1,194   1.68     491,944  502.1
+  2011 TR   47  19  28   0     1,137,862   1.52   46.8%      24,210      33.4      1,571   1.57     948,406  971.4
+  2012 TR   50  14  36   0       642,644   1.19   30.0%      12,853       6.7        337   1.08   1,101,879  831.8
+  2013 TR   45  22  23   0       390,227   1.15   24.4%       8,672       8.8        396   1.17   1,333,078  1099.3
+  2014 TR   41  28  13   0     2,639,177   1.97   29.3%      64,370     116.3      4,770   2.01   1,342,467  702.1
+  2015 TR   39  17  22   0     6,807,225   4.44   38.5%     174,544     785.0     30,615   3.62     763,151  179.8
+  2016 TR   61  19  42   0    -1,441,354   0.63   29.5%     -23,629    -129.1     -7,874   0.58   1,665,115  242.8
+  2017 TR   54  16  38   0    -1,275,094   0.68   31.5%     -23,613     -75.3     -4,067   0.61   2,325,108  390.0
+  2018 TR   50  21  29   0     1,325,483   1.34   32.0%      26,510      37.9      1,894   1.17   1,458,634  360.4
+  2019 TE   47  13  34   0      -762,086   0.72   27.7%     -16,215     -27.6     -1,296   0.77   1,316,793  468.1
+  2020 TE   39  20  19   0     3,915,603   2.87   35.9%     100,400     277.4     10,819   2.21     749,217  266.2
+  2021 TE   53  20  33   0     1,027,976   1.41   34.0%      19,396      40.3      2,137   1.29     795,772  377.4
+  2022 TE   11   8   3   0       453,271   1.89   36.4%      41,206     482.5      5,307   3.17     356,719  200.0
+  ------------------------------------------------------------------------------------------------------------------
+   ALL     551 226 325   0    15,952,352                                 83.1     45,803
+======================================================================================================================
+
+==============================================================
+  FLIP STATISTICS
+==============================================================
+  Total trades:       551
+  Flips:              0 (0.0%)
+  Signal reverse:     524
+  End of day:         0
+  Expiration:         22
+  Other:              5
+  Overlapping L+S:    0 (eliminated by flip logic)
+==============================================================

@@ -1,0 +1,183 @@
+==============================================================
+  BLOCK E: Momentum-Trend Strategy — RTSF (SHORT)
+  Konkop Xpress-style Analysis
+==============================================================
+
+  ─── Strategy Parameters ─────────────────────────────────
+  tf1 = 180 min    tf2 = 45 min
+  lookback = 245    length = 55
+  lookback2 = 70   length2 = 95
+  min_s = 330  max_s = 650
+  koeff1 = 1.0000  koeff2 = 0.9458
+  mmcoff = 17  exitday = 0  sdel_day = 1  exit_week = 0
+  Capital = 5,000,000    Commission = 0.01% (round-trip)
+  Position sizing: floor(capital / (300 * ATR(17)))
+
+
+==============================================================
+  TRAIN  (2007 - 2018)
+==============================================================
+
+  Start date           28.02.2007    End date          21.12.2018
+  Start equity        5,000,000    End equity       8,821,926
+  Commission (round-trip)                      204,704
+
+  ─── Trade Statistics ─────────────────────────────────────
+  Total trades               338    Profit factor              1.67
+  Math. expectation      0.23 %    Avg. win/loss              2.20
+  StdDev. trade           74,813    Avg.trade/StdDev           0.15
+
+  ─── Profit / Loss ───────────────────────────────────────
+  Net profit            3,821,926    Max DD                 7.39 %
+  Gross profit          9,497,429    Gross loss         -5,675,502
+
+  ─── Win / Loss Breakdown ────────────────────────────────
+  Win. trades                146    Los. trades                 192
+  Perc. winning         43.20 %    Perc. losing            56.80 %
+  Avg. win                 65,051    Avg. loss              -29,560
+  Largest win             445,660    Largest loss          -181,304
+  Max conseq.win               9    Max conseq.loss               8
+
+  ─── Returns ─────────────────────────────────────────────
+  Total return          76.44 %
+  Annual return          4.93 %
+  Ann.ret/max.DD         0.67
+  Max DD (abs)            641,670
+
+  ─── Per 1 Contract ──────────────────────────────────────
+  Avg trade (1c)           604.6 pts   Total PnL (1c)       204,340 pts
+  StdDev (1c)            3,824.4 pts   Profit factor(1c)        1.76
+  Sharpe (1c)                2.91
+
+  ─── Position Sizing ─────────────────────────────────────
+  Avg contracts             25.0    Min / Max            5 / 81   
+
+  ─── Holding Period ──────────────────────────────────────
+  Avg hold               52.5 hrs   Min hold              0.7 hrs
+  Max hold              434.5 hrs   Period              11.81 yrs
+==============================================================
+
+==============================================================
+  TEST / OOS  (2019 - 2022)
+==============================================================
+
+  Start date           13.02.2019    End date          24.02.2022
+  Start equity        5,000,000    End equity       5,692,609
+  Commission (round-trip)                       59,291
+
+  ─── Trade Statistics ─────────────────────────────────────
+  Total trades                78    Profit factor              1.44
+  Math. expectation      0.18 %    Avg. win/loss              2.57
+  StdDev. trade           74,961    Avg.trade/StdDev           0.12
+
+  ─── Profit / Loss ───────────────────────────────────────
+  Net profit              692,609    Max DD                 6.70 %
+  Gross profit          2,265,618    Gross loss         -1,573,009
+
+  ─── Win / Loss Breakdown ────────────────────────────────
+  Win. trades                 28    Los. trades                  50
+  Perc. winning         35.90 %    Perc. losing            64.10 %
+  Avg. win                 80,915    Avg. loss              -31,460
+  Largest win             296,390    Largest loss          -106,117
+  Max conseq.win               3    Max conseq.loss               8
+
+  ─── Returns ─────────────────────────────────────────────
+  Total return          13.85 %
+  Annual return          4.37 %
+  Ann.ret/max.DD         0.65
+  Max DD (abs)            359,299
+
+  ─── Per 1 Contract ──────────────────────────────────────
+  Avg trade (1c)         1,011.5 pts   Total PnL (1c)        78,900 pts
+  StdDev (1c)            6,685.8 pts   Profit factor(1c)        2.16
+  Sharpe (1c)                1.34
+
+  ─── Position Sizing ─────────────────────────────────────
+  Avg contracts             27.9    Min / Max            6 / 49   
+
+  ─── Holding Period ──────────────────────────────────────
+  Avg hold               56.9 hrs   Min hold              0.8 hrs
+  Max hold              188.0 hrs   Period               3.03 yrs
+==============================================================
+
+==============================================================
+  ALL  (2007 - 2022)
+==============================================================
+
+  Start date           28.02.2007    End date          24.02.2022
+  Start equity        5,000,000    End equity       9,514,535
+  Commission (round-trip)                      263,995
+
+  ─── Trade Statistics ─────────────────────────────────────
+  Total trades               416    Profit factor              1.62
+  Math. expectation      0.22 %    Avg. win/loss              2.26
+  StdDev. trade           74,757    Avg.trade/StdDev           0.15
+
+  ─── Profit / Loss ───────────────────────────────────────
+  Net profit            4,514,535    Max DD                 7.39 %
+  Gross profit         11,763,047    Gross loss         -7,248,512
+
+  ─── Win / Loss Breakdown ────────────────────────────────
+  Win. trades                174    Los. trades                 242
+  Perc. winning         41.83 %    Perc. losing            58.17 %
+  Avg. win                 67,604    Avg. loss              -29,953
+  Largest win             445,660    Largest loss          -181,304
+  Max conseq.win               9    Max conseq.loss               8
+
+  ─── Returns ─────────────────────────────────────────────
+  Total return          90.29 %
+  Annual return          4.39 %
+  Ann.ret/max.DD         0.59
+  Max DD (abs)            641,670
+
+  ─── Per 1 Contract ──────────────────────────────────────
+  Avg trade (1c)           680.9 pts   Total PnL (1c)       283,240 pts
+  StdDev (1c)            4,494.0 pts   Profit factor(1c)        1.84
+  Sharpe (1c)                3.09
+
+  ─── Position Sizing ─────────────────────────────────────
+  Avg contracts             25.6    Min / Max            5 / 81   
+
+  ─── Holding Period ──────────────────────────────────────
+  Avg hold               53.3 hrs   Min hold              0.7 hrs
+  Max hold              434.5 hrs   Period              14.99 yrs
+==============================================================
+
+==============================================================
+  OOS COMPARISON
+==============================================================
+                                    TRAIN          TEST
+  Avg trade (1c)                604.6        1011.5
+  Profit factor (1c)             1.76          2.16
+  Sharpe (1c)                    2.91          1.34
+  Win rate                     43.20%        35.90%
+  Trades                          338            78
+  Ann. return                   4.93%         4.37%
+  Max DD                        7.39%         6.70%
+  OOS decay (1c)               -67.3%
+==============================================================
+
+================================================================================================
+  YEAR-BY-YEAR BREAKDOWN
+================================================================================================
+  Year     #Tr       Net PnL     PF     WR%   Avg trade    Avg 1c     Tot 1c  PF 1c       MaxDD   AvgC
+  --------------------------------------------------------------------------------------------
+  2007 TR    9       204,298   2.37   44.4%      22,700   1,341.1     12,070   2.34      91,780   16.0
+  2008 TR   36       779,408   3.10   47.2%      21,650   1,942.4     69,925   2.62     158,658   11.1
+  2009 TR   22       -65,192   0.88   31.8%      -2,963    -379.5     -8,350   0.74     320,975   17.3
+  2010 TR   27       405,677   2.12   55.6%      15,025     935.6     25,260   2.12     147,330   20.3
+  2011 TR   33       671,913   2.56   48.5%      20,361   1,595.6     52,655   2.96     122,705   15.5
+  2012 TR   33       356,291   1.50   36.4%      10,797     229.7      7,580   1.22     179,418   21.2
+  2013 TR   27       226,430   1.55   44.4%       8,386     352.6      9,520   1.86     221,436   32.4
+  2014 TR   37       769,450   2.12   40.5%      20,796     628.6     23,260   1.87     242,700   26.8
+  2015 TR   38       188,683   1.31   47.4%       4,965     137.9      5,240   1.23     144,801   29.6
+  2016 TR   22      -435,368   0.33   27.3%     -19,789    -603.2    -13,270   0.29     578,875   37.0
+  2017 TR   25       268,060   1.57   48.0%      10,722     234.0      5,850   1.54     209,366   43.3
+  2018 TR   29       452,277   2.55   41.4%      15,596     503.4     14,600   2.44      87,125   30.7
+  2019 TE   22       -14,048   0.95   36.4%        -639     106.4      2,340   1.32     184,494   38.8
+  2020 TE   25       276,308   1.52   36.0%      11,052     972.4     24,310   2.15     240,462   26.6
+  2021 TE   24       -79,901   0.87   33.3%      -3,329    -142.9     -3,430   0.87     359,299   24.2
+  2022 TE    7       510,250   5.81   42.9%      72,893   7,954.3     55,680   5.59      87,461   11.1
+  --------------------------------------------------------------------------------------------
+   ALL     416     4,514,535                                680.9    283,240
+================================================================================================

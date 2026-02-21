@@ -1,0 +1,5 @@
+experiment,model_type,loss_fn,generator,description,MAE,MAPE,DirAcc,PinballLoss,HighConfDirAcc,HighConfCount,HighConfPct,time_sec,n_features,train_samples,test_samples
+C2a,classifier,ce,lstm,Classifier 2-class (up/down) + CrossEntropy,0.033410392701625824,10.164348602294922,0.5101080033231792,0.016705196040372055,,,,252.1,16,14238,3624
+C2b,classifier,ce,lstm,Classifier 3-class (up/flat/down) + CrossEntropy,0.013452837243676186,1.0010418891906738,0.5156466352810856,0.006726418466617663,0.5156,3611,100.0,244.8,16,14238,3624
+C2c,classifier,focal,lstm,Classifier 2-class + FocalLoss(gamma=2),0.017193365842103958,3.0487167835235596,0.4898919966768208,0.008596682921051979,,,,246.9,16,14238,3624
+C2d,classifier,ce,lstm,Classifier 2-class + CE (confidence filtering at eval),0.033410392701625824,10.164348602294922,0.5101080033231792,0.016705196040372055,,,,251.7,16,14238,3624
