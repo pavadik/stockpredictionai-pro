@@ -78,7 +78,7 @@ namespace RTSF_Strategy_ML.ML
 
             // --- Macro / D1 Features ---
             DateTime entryDate = entryTime.Date;
-            if (_d1DateToIndex.TryGetValue(entryDate, out int d1Loc) && d1Loc >= 6)
+            if (_d1DateToIndex.TryGetValue(entryDate, out int d1Loc) && d1Loc > 10)
             {
                 int yestLoc = d1Loc - 1;
                 var yestBar = _d1Bars[yestLoc];
@@ -104,7 +104,7 @@ namespace RTSF_Strategy_ML.ML
             }
 
             // --- Micro / M1 Features ---
-            if (_m1TimeToIndex.TryGetValue(entryTime, out int m1Loc) && m1Loc >= 120)
+            if (_m1TimeToIndex.TryGetValue(entryTime, out int m1Loc) && m1Loc > 120)
             {
                 var entryBar = _m1Bars[m1Loc];
                 // 10. m1_volume

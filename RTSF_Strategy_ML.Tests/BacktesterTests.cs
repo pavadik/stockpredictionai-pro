@@ -12,8 +12,8 @@ namespace RTSF_Strategy_ML.Tests
         [Fact]
         public void SimulateCombinedTrades_SimpleLongTrade()
         {
-            var pLong = new StrategyParams { ExitDay = 1, SdelDay = 0 };
-            var pShort = new StrategyParams { ExitDay = 1, SdelDay = 0 };
+            var pLong = new StrategyParams { ExitDay = 1, SdelDay = 0, Leverage = 1f, MaxContracts = 0 };
+            var pShort = new StrategyParams { ExitDay = 1, SdelDay = 0, Leverage = 1f, MaxContracts = 0 };
 
             var rowsLong = new List<StrategyDataRow>
             {
@@ -27,7 +27,7 @@ namespace RTSF_Strategy_ML.Tests
                 new StrategyDataRow { Time = new DateTime(2016, 1, 1, 11, 0, 0), AllowTrade = true, InTimeWindow = true, EntrySignal = false, Close = 110, Contracts = 1 }
             };
 
-            var trades = Backtester.SimulateCombinedTrades(rowsLong, rowsShort, pLong, pShort, Backtester.FlipMode.CloseLoss, commissionPerContract: 0f);
+            var trades = Backtester.SimulateCombinedTrades(rowsLong, rowsShort, pLong, pShort, Backtester.FlipMode.CloseLoss, commissionPct: 0f);
 
             Assert.Single(trades);
             Assert.Equal(TradeDirection.Long, trades[0].Direction);
@@ -41,8 +41,8 @@ namespace RTSF_Strategy_ML.Tests
         [Fact]
         public void SimulateCombinedTrades_FlipMode_CloseLoss()
         {
-            var pLong = new StrategyParams { ExitDay = 1, SdelDay = 0 };
-            var pShort = new StrategyParams { ExitDay = 1, SdelDay = 0 };
+            var pLong = new StrategyParams { ExitDay = 1, SdelDay = 0, Leverage = 1f, MaxContracts = 0 };
+            var pShort = new StrategyParams { ExitDay = 1, SdelDay = 0, Leverage = 1f, MaxContracts = 0 };
 
             // Scenario: Long position opened, goes into loss, then Short entry signal fires.
             var rowsLong = new List<StrategyDataRow>
@@ -57,7 +57,7 @@ namespace RTSF_Strategy_ML.Tests
                 new StrategyDataRow { Time = new DateTime(2016, 1, 1, 11, 0, 0), AllowTrade = true, InTimeWindow = true, EntrySignal = true, Close = 90, Contracts = 1 } // Opposite signal when LONG is losing (-10)
             };
 
-            var trades = Backtester.SimulateCombinedTrades(rowsLong, rowsShort, pLong, pShort, Backtester.FlipMode.CloseLoss, commissionPerContract: 0f);
+            var trades = Backtester.SimulateCombinedTrades(rowsLong, rowsShort, pLong, pShort, Backtester.FlipMode.CloseLoss, commissionPct: 0f);
 
             // With CloseLoss, the Long position should close because it's at a loss. But it does NOT reopen a short position (because it's not a full Flip, just CloseLoss).
             Assert.Single(trades);
@@ -69,8 +69,8 @@ namespace RTSF_Strategy_ML.Tests
         [Fact]
         public void SimulateCombinedTrades_EndOfDayExit()
         {
-            var pLong = new StrategyParams { ExitDay = 1, SdelDay = 0 };
-            var pShort = new StrategyParams { ExitDay = 1, SdelDay = 0 };
+            var pLong = new StrategyParams { ExitDay = 1, SdelDay = 0, Leverage = 1f, MaxContracts = 0 };
+            var pShort = new StrategyParams { ExitDay = 1, SdelDay = 0, Leverage = 1f, MaxContracts = 0 };
 
             var rowsLong = new List<StrategyDataRow>
             {
@@ -84,7 +84,7 @@ namespace RTSF_Strategy_ML.Tests
                 new StrategyDataRow { Time = new DateTime(2016, 1, 1, 23, 0, 0), AllowTrade = true, InTimeWindow = false, EntrySignal = false, Close = 120, Contracts = 1 }
             };
 
-            var trades = Backtester.SimulateCombinedTrades(rowsLong, rowsShort, pLong, pShort, Backtester.FlipMode.CloseLoss, commissionPerContract: 0f);
+            var trades = Backtester.SimulateCombinedTrades(rowsLong, rowsShort, pLong, pShort, Backtester.FlipMode.CloseLoss, commissionPct: 0f);
 
             Assert.Single(trades);
             Assert.Equal("end_of_day", trades[0].ExitReason);

@@ -48,3 +48,17 @@ G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Logg
 G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Logging.Abstractions.dll
 G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Options.dll
 G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Primitives.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Google.Api.CommonProtos.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Google.Protobuf.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Grpc.Core.Api.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Grpc.Net.Client.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Grpc.Net.ClientFactory.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Grpc.Net.Common.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Configuration.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Configuration.Binder.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Diagnostics.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Diagnostics.Abstractions.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Http.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll
+G:\StockPredict\GIT\RTSF_Strategy_ML\bin\Debug\net10.0\Tinkoff.InvestApi.dll

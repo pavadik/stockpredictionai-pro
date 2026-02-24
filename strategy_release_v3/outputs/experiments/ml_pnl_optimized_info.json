@@ -1,0 +1,23 @@
+{
+  "best_config": "d1_n1000_lr01",
+  "threshold": 0.3,
+  "train_pnl": 15811540,
+  "test_pnl": 6964880,
+  "total_pnl": 22776420,
+  "features": [
+    "hour",
+    "minute",
+    "day_of_week",
+    "month",
+    "d1_volume",
+    "d1_tr",
+    "d1_adx",
+    "d1_ret_1d",
+    "d1_ret_5d",
+    "m1_volume",
+    "m1_ret_15m",
+    "m1_ret_60m",
+    "m1_ret_120m",
+    "is_long"
+  ]
+}

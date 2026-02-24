@@ -27,8 +27,10 @@ namespace RTSF_Strategy_ML.Strategy
             StrategyParams paramsLong,
             StrategyParams paramsShort,
             FlipMode flipMode = FlipMode.CloseLoss,
-            float commissionPerContract = 0f, // e.g., slippage + commission
-            int pointValue = 1) // e.g., for RTS usually we trade in points, but RTSF point value might be different. Let's just track raw points first.
+            float commissionPct = 0f,
+            int pointValue = 1,
+            float tpAtrMult = 0f,
+            float tpPct = 0f)
         {
             var events = new List<CombinedEvent>(rowsLong.Count + rowsShort.Count);
 
@@ -50,6 +52,8 @@ namespace RTSF_Strategy_ML.Strategy
             int posSize = 0;
             float entryPrice = 0f;
             DateTime entryTime = DateTime.MinValue;
+            float entryAtr = 0f;
+            bool tpHit = false;
             float mfe1c = 0f;
             float mae1c = 0f;
             int barsInTrade = 0;
@@ -60,11 +64,12 @@ namespace RTSF_Strategy_ML.Strategy
 
             int tradeIdCounter = 1;
 
-            Action<DateTime, float, string> ClosePosition = (exitTs, exitPrice, reason) =>
+            Action<DateTime, float, string, int?> ClosePosition = (exitTs, exitPrice, reason, closeSize) =>
             {
+                int sz = closeSize ?? posSize;
                 float sign = posDir == TradeDirection.Short ? -1f : 1f;
                 float pnl1c = sign * (exitPrice - entryPrice);
-                float pnlNet = (pnl1c - commissionPerContract) * posSize;
+                float pnlNet = pnl1c * sz;
 
                 trades.Add(new Trade
                 {
@@ -74,7 +79,7 @@ namespace RTSF_Strategy_ML.Strategy
                     ExitTime = exitTs,
                     EntryPrice = entryPrice,
                     ExitPrice = exitPrice,
-                    Contracts = posSize,
+                    Contracts = sz,
                     Pnl1c = pnl1c,
                     PnlNet = pnlNet,
                     Mfe1c = mfe1c,
@@ -83,17 +88,34 @@ namespace RTSF_Strategy_ML.Strategy
                     ExitReason = reason
                 });
 
-                posDir = TradeDirection.Flat;
-                posSize = 0;
-                barsInTrade = 0;
+                if (closeSize.HasValue)
+                {
+                    posSize -= sz;
+                    if (posSize <= 0)
+                    {
+                        posDir = TradeDirection.Flat;
+                        posSize = 0;
+                    }
+                }
+                else
+                {
+                    posDir = TradeDirection.Flat;
+                    posSize = 0;
+                    barsInTrade = 0;
+                }
             };
 
-            Action<TradeDirection, DateTime, float, int> OpenPosition = (dir, ts, price, lots) =>
+            Action<TradeDirection, DateTime, float, int, StrategyParams, float> OpenPosition = (dir, ts, price, baseLots, p, atr) =>
             {
                 posDir = dir;
-                posSize = lots;
+                int leveraged = Math.Max((int)(baseLots * p.Leverage), 1);
+                if (p.MaxContracts > 0)
+                    leveraged = Math.Min(leveraged, p.MaxContracts);
+                posSize = leveraged;
                 entryPrice = price;
                 entryTime = ts;
+                entryAtr = atr;
+                tpHit = false;
                 mfe1c = 0f;
                 mae1c = 0f;
                 barsInTrade = 0;
@@ -139,7 +161,7 @@ namespace RTSF_Strategy_ML.Strategy
                 // 1. Forced exit: Expiration week
                 if (posSize > 0 && src == posDir && !row.AllowTrade)
                 {
-                    ClosePosition(ev.Time, row.Close, "expiration");
+                    ClosePosition(ev.Time, row.Close, "expiration", null);
                     continue;
                 }
 
@@ -157,14 +179,10 @@ namespace RTSF_Strategy_ML.Strategy
                                 if (src == TradeDirection.Short && oneEntryTodayShort) continue;
                             }
                             
-                            // Only open if contracts > 0
-                            if (row.Contracts > 0)
-                            {
-                                OpenPosition(src, ev.Time, row.Close, row.Contracts);
-                                
-                                if (src == TradeDirection.Long) oneEntryTodayLong = true;
-                                else oneEntryTodayShort = true;
-                            }
+                            OpenPosition(src, ev.Time, row.Close, row.Contracts, p, row.Atr);
+                            
+                            if (src == TradeDirection.Long) oneEntryTodayLong = true;
+                            else oneEntryTodayShort = true;
                         }
                     }
                     else if (src == posDir)
@@ -172,7 +190,23 @@ namespace RTSF_Strategy_ML.Strategy
                         // Same direction bar -> check signal reverse (exit signal)
                         if (row.ExitSignal)
                         {
-                            ClosePosition(ev.Time, row.Close, "signal_reverse");
+                            ClosePosition(ev.Time, row.Close, "signal_reverse", null);
+                        }
+                        else if (tpAtrMult > 0 && tpPct > 0 && !tpHit && entryAtr > 0)
+                        {
+                            float pnlSign = posDir == TradeDirection.Long ? 1f : -1f;
+                            float unrealized = pnlSign * (row.Close - entryPrice);
+                            if (unrealized >= entryAtr * tpAtrMult)
+                            {
+                                int tpSize = Math.Max((int)(posSize * tpPct), 1);
+                                if (tpSize >= posSize)
+                                    tpSize = posSize - 1;
+                                if (tpSize > 0)
+                                {
+                                    ClosePosition(ev.Time, row.Close, "partial_tp", tpSize);
+                                    tpHit = true;
+                                }
+                            }
                         }
                     }
                     else
@@ -230,11 +264,11 @@ namespace RTSF_Strategy_ML.Strategy
                             if (doClose)
                             {
                                 string reason = doReopen ? "flip" : "close_opposing";
-                                ClosePosition(ev.Time, row.Close, reason);
+                                ClosePosition(ev.Time, row.Close, reason, null);
                                 
                                 if (doReopen)
                                 {
-                                    OpenPosition(src, ev.Time, row.Close, row.Contracts);
+                                    OpenPosition(src, ev.Time, row.Close, row.Contracts, p, row.Atr);
                                 }
                                 
                                 if (src == TradeDirection.Long) oneEntryTodayLong = true;
@@ -246,13 +280,13 @@ namespace RTSF_Strategy_ML.Strategy
                 // 3. Outside window: end-of-day exit for current direction
                 else if (posSize > 0 && src == posDir && p.ExitDay == 1)
                 {
-                    ClosePosition(ev.Time, row.Close, "end_of_day");
+                    ClosePosition(ev.Time, row.Close, "end_of_day", null);
                 }
 
                 // 4. End-of-week exit
                 if (posSize > 0 && src == posDir && p.ExitWeek == 1 && row.IsWeekEnd)
                 {
-                    ClosePosition(ev.Time, row.Close, "end_of_week");
+                    ClosePosition(ev.Time, row.Close, "end_of_week", null);
                 }
             }
 
@@ -266,7 +300,7 @@ namespace RTSF_Strategy_ML.Strategy
                 
                 if (lastRow != null)
                 {
-                    ClosePosition(lastRow.Time, lastRow.Close, "end_of_data");
+                    ClosePosition(lastRow.Time, lastRow.Close, "end_of_data", null);
                 }
             }
 

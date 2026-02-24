@@ -135,6 +135,10 @@ def main():
                     help="How to handle opposing entry signals")
     ap.add_argument("--leverage", type=float, default=1.0,
                     help="Leverage multiplier for position sizing (1.0 = no leverage)")
+    ap.add_argument("--tp_atr_mult", type=float, default=0.0,
+                    help="ATR multiplier for partial take-profit (0 = disabled)")
+    ap.add_argument("--tp_pct", type=float, default=0.0,
+                    help="Fraction of position to close at TP (e.g. 0.5 = 50%%)")
     args = ap.parse_args()
     capital = args.capital
     cpct = args.commission
@@ -202,7 +206,9 @@ def main():
             max_contracts_long=args.cap_long,
             max_contracts_short=args.cap_short,
             flip_mode=args.flip_mode,
-            leverage=args.leverage)
+            leverage=args.leverage,
+            tp_atr_mult=args.tp_atr_mult,
+            tp_pct=args.tp_pct)
         elapsed = time.time() - t0
 
         metrics = compute_metrics(trades)

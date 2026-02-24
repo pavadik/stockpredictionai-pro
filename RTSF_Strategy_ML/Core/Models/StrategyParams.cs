@@ -31,7 +31,7 @@ namespace RTSF_Strategy_ML.Core.Models
         public float Leverage { get; set; } = 4.0f;
 
         // Trade Management
-        public int ExitDay { get; set; } = 1;
+        public int ExitDay { get; set; } = 0;
         public int SdelDay { get; set; } = 0;
         public int ExitWeek { get; set; } = 0;
 

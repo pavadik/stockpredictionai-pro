@@ -100,27 +100,18 @@ namespace RTSF_Strategy_ML.Strategy
                     r.ExitSignal = active && condTf1Short && !condTf2Short;
                 }
 
-                // Compute ATR for position sizing
+                // Base position sizing: floor(capital / (point_value_mult * atr))
+                // Leverage and caps are applied in the Backtester (matching Python behavior)
                 if (r.Atr > 0)
                 {
-                    // To match python's floor(capital / (point_value_mult * atr))
                     float rawContracts = _params.Capital / (_params.PointValueMult * r.Atr);
-                    
-                    // Pandas fillna(0) and astype(int).clip(lower=0)
                     r.ContractsBase = float.IsInfinity(rawContracts) || float.IsNaN(rawContracts) ? 0 : Math.Max(0, (int)Math.Floor(rawContracts));
-
-                    // Apply Leverage and Cap
-                    int leveraged = (int)(r.ContractsBase * _params.Leverage);
-                    if (_params.MaxContracts > 0)
-                        r.Contracts = Math.Clamp(leveraged, 0, _params.MaxContracts); // python clip(lower=0) -> allow 0 contracts
-                    else
-                        r.Contracts = Math.Max(0, leveraged); // changed from 1 to 0 to match Python allowing 0 contracts if not enough cap
                 }
                 else
                 {
                     r.ContractsBase = 0;
-                    r.Contracts = 0; // Wait, python's safe_atr replaces 0 with NaN -> NaN -> fillna(0) -> 0. Wait, then clip(lower=0). But wait, does 0 contracts allow trade?
                 }
+                r.Contracts = r.ContractsBase;
             }
         }
     }

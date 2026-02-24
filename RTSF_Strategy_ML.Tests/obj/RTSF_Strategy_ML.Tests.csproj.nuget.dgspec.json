@@ -437,13 +437,25 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "CommandLineParser": {
+              "target": "Package",
+              "version": "[2.9.1, )"
+            },
             "CsvHelper": {
               "target": "Package",
               "version": "[33.1.0, )"
             },
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            },
             "Microsoft.ML.OnnxRuntime": {
               "target": "Package",
               "version": "[1.24.2, )"
+            },
+            "Tinkoff.InvestApi": {
+              "target": "Package",
+              "version": "[0.6.19, )"
             }
           },
           "imports": [

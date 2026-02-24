@@ -393,6 +393,8 @@ def simulate_combined_trades(
     max_contracts_short: int = 0,
     flip_mode: str = "flip",
     leverage: float = 1.0,
+    tp_atr_mult: float = 0.0,
+    tp_pct: float = 0.0,
 ) -> List[Trade]:
     """Run a unified LONG+SHORT simulation on merged bar timelines.
 
@@ -445,25 +447,34 @@ def simulate_combined_trades(
     pos_size: int = 0
     entry_price: float = 0.0
     entry_time: datetime = datetime.min
+    entry_atr: float = 0.0
+    tp_hit: bool = False
     current_date = None
     one_entry_today_L = False
     one_entry_today_S = False
 
-    def _close_position(exit_ts, exit_price, reason):
+    def _close_position(exit_ts, exit_price, reason, size=None):
         nonlocal pos_dir, pos_size, entry_price, entry_time
+        close_size = size if size is not None else pos_size
         sign = -1.0 if pos_dir == "short" else 1.0
-        pnl = sign * (exit_price - entry_price) * pos_size
+        pnl = sign * (exit_price - entry_price) * close_size
         trades.append(Trade(
             entry_time=entry_time, exit_time=exit_ts,
             entry_price=entry_price, exit_price=exit_price,
-            contracts=pos_size, pnl=pnl, exit_reason=reason,
+            contracts=close_size, pnl=pnl, exit_reason=reason,
             direction=pos_dir,
         ))
-        pos_dir = ""
-        pos_size = 0
+        if size is not None:
+            pos_size -= close_size
+            if pos_size <= 0:
+                pos_dir = ""
+                pos_size = 0
+        else:
+            pos_dir = ""
+            pos_size = 0
 
     def _open_position(direction, ts, price, lots, atr_val):
-        nonlocal pos_dir, pos_size, entry_price, entry_time
+        nonlocal pos_dir, pos_size, entry_price, entry_time, entry_atr, tp_hit
         pos_dir = direction
         pos_size = max(int(lots * leverage), 1)
         cap = (max_contracts_long if direction == "long" else max_contracts_short)
@@ -473,6 +484,8 @@ def simulate_combined_trades(
             pos_size = min(pos_size, cap)
         entry_price = price
         entry_time = ts
+        entry_atr = atr_val
+        tp_hit = False
 
     # -- main loop --
     for ts, src, idx in events:
@@ -488,6 +501,7 @@ def simulate_combined_trades(
         allow_val = bool(M["allow"][idx])
         in_win_val = bool(M["in_win"][idx])
         lots_val = int(M["lots"][idx])
+        atr_val = float(M["atr"][idx])
         exitday = M["exitday"]
         sdel_day = M["sdel_day"]
         exit_week = M["exit_week"]
@@ -508,7 +522,7 @@ def simulate_combined_trades(
                             continue
                         if src == "short" and one_entry_today_S:
                             continue
-                    _open_position(src, ts, close_val, lots_val, 0.0)
+                    _open_position(src, ts, close_val, lots_val, atr_val)
                     if src == "long":
                         one_entry_today_L = True
                     else:
@@ -518,6 +532,16 @@ def simulate_combined_trades(
                 # same direction bar -> check signal_reverse
                 if not entry_flag:
                     _close_position(ts, close_val, "signal_reverse")
+                elif tp_atr_mult > 0 and tp_pct > 0 and not tp_hit and entry_atr > 0:
+                    pnl_sign = 1.0 if pos_dir == "long" else -1.0
+                    unrealized = pnl_sign * (close_val - entry_price)
+                    if unrealized >= entry_atr * tp_atr_mult:
+                        tp_size = max(int(pos_size * tp_pct), 1)
+                        if tp_size >= pos_size:
+                            tp_size = pos_size - 1
+                        if tp_size > 0:
+                            _close_position(ts, close_val, "partial_tp", size=tp_size)
+                            tp_hit = True
 
             else:
                 # opposing direction bar -> handle based on flip_mode
@@ -557,7 +581,7 @@ def simulate_combined_trades(
                         reason = "flip" if do_reopen else "close_opposing"
                         _close_position(ts, close_val, reason)
                         if do_reopen:
-                            _open_position(src, ts, close_val, lots_val, 0.0)
+                            _open_position(src, ts, close_val, lots_val, atr_val)
                         if src == "long":
                             one_entry_today_L = True
                         else:

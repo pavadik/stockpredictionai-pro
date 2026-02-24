@@ -12,6 +12,7 @@
     <PackageReference Include="CsvHelper" Version="33.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.3" />
     <PackageReference Include="Microsoft.ML.OnnxRuntime" Version="1.24.2" />
+    <PackageReference Include="Tinkoff.InvestApi" Version="0.6.19" />
   </ItemGroup>
 
 </Project>

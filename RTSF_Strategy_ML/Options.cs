@@ -31,5 +31,17 @@ namespace RTSF_Strategy_ML
 
         [Option("leverage", Required = false, Default = 4.0f, HelpText = "Leverage multiplier.")]
         public float Leverage { get; set; } = 4.0f;
+
+        [Option("tp_atr_mult", Required = false, Default = 0f, HelpText = "ATR multiplier for partial take-profit (0 = disabled).")]
+        public float TpAtrMult { get; set; } = 0f;
+
+        [Option("tp_pct", Required = false, Default = 0f, HelpText = "Fraction of position to close at TP (e.g. 0.5 = 50%).")]
+        public float TpPct { get; set; } = 0f;
+
+        [Option("tinkoff_token", Required = false, HelpText = "Tinkoff Invest API token for live data.")]
+        public string TinkoffToken { get; set; } = string.Empty;
+
+        [Option("future_prefix", Required = false, Default = "RI", HelpText = "Futures ticker prefix to search (e.g. RI for RTS Index, Si for USD/RUB).")]
+        public string FuturePrefix { get; set; } = "RI";
     }
 }

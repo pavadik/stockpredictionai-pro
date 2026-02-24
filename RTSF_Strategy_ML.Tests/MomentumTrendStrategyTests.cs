@@ -50,10 +50,11 @@ namespace RTSF_Strategy_ML.Tests
 
             strategy.GenerateSignals(rows);
 
-            // Row 0-19 will have NaN for TF1 SMA and TSA (length=20)
-            for (int i = 0; i < 19; i++)
+            // TrendScore needs lookback+j bars of history (j=1..10, lookback=10).
+            // For i < lookback+1 = 11, no shift is valid, so TrendScore = 0.
+            for (int i = 0; i < 11; i++)
             {
-                Assert.False(rows[i].EntrySignal);
+                Assert.Equal(0f, rows[i].TrendScore);
             }
 
             // By row 30, TF1 and TF2 should be fully valid and in up trend
@@ -72,10 +73,10 @@ namespace RTSF_Strategy_ML.Tests
 
             Assert.True(foundEntry, "Should find at least one entry signal in an up trend");
 
-            // Check position sizing
+            // Check base position sizing (leverage and caps are now applied in Backtester)
             // ATR with TR=2 should be 2.
-            // Capital=5000000, PointValueMult=300, ATR=2 -> 5000000 / (300*2) = 8333.33 -> 8333 -> capped at MaxContracts=100
-            Assert.Equal(100, rows[49].Contracts);
+            // Capital=5000000, PointValueMult=300, ATR=2 -> floor(5000000 / (300*2)) = 8333
+            Assert.Equal(8333, rows[49].Contracts);
         }
 
         [Fact]

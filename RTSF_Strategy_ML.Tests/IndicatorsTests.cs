@@ -12,13 +12,18 @@ namespace RTSF_Strategy_ML.Tests
         public void Sma_Basic_CalculatesCorrectly()
         {
             float[] series = { 1, 2, 3, 4, 5 };
-            float[] expected = { float.NaN, float.NaN, 2.0f, 3.0f, 4.0f }; // Period 3
+            // min_periods=1: partial averages from bar 0
+            // i=0: avg(1) = 1.0
+            // i=1: avg(1,2) = 1.5
+            // i=2: avg(1,2,3) = 2.0
+            // i=3: avg(2,3,4) = 3.0
+            // i=4: avg(3,4,5) = 4.0
 
             var result = Indicators.Sma(series, 3);
 
-            Assert.Equal(expected.Length, result.Length);
-            Assert.True(float.IsNaN(result[0]));
-            Assert.True(float.IsNaN(result[1]));
+            Assert.Equal(5, result.Length);
+            Assert.Equal(1.0f, result[0]);
+            Assert.Equal(1.5f, result[1]);
             Assert.Equal(2.0f, result[2]);
             Assert.Equal(3.0f, result[3]);
             Assert.Equal(4.0f, result[4]);
@@ -28,14 +33,16 @@ namespace RTSF_Strategy_ML.Tests
         public void Sma_WithNaNs_IgnoresNaNs()
         {
             float[] series = { 1, 2, float.NaN, 4, 5 };
-            // Period 3
-            // i=0: NaN
-            // i=1: NaN
+            // Period 3, min_periods=1
+            // i=0 (vals: 1): sum=1, count=1 -> 1.0
+            // i=1 (vals: 1, 2): sum=3, count=2 -> 1.5
             // i=2 (vals: 1, 2, NaN): sum=3, count=2 -> 1.5
             // i=3 (vals: 2, NaN, 4): sum=6, count=2 -> 3.0
             // i=4 (vals: NaN, 4, 5): sum=9, count=2 -> 4.5
             var result = Indicators.Sma(series, 3);
 
+            Assert.Equal(1.0f, result[0]);
+            Assert.Equal(1.5f, result[1]);
             Assert.Equal(1.5f, result[2]);
             Assert.Equal(3.0f, result[3]);
             Assert.Equal(4.5f, result[4]);

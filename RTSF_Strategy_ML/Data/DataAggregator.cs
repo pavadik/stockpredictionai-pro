@@ -65,9 +65,10 @@ namespace RTSF_Strategy_ML.Data
             var tf2Bars = AggregateIntradayCustom(m1Bars, tf2Minutes);
             var tf1Bars = AggregateIntradayCustom(m1Bars, tf1Minutes);
 
-            // Compute first M1 bar time per day to calculate ElapsedMinutes
-            var firstBarTimePerDate = m1Bars.GroupBy(b => b.Time.Date)
-                                            .ToDictionary(g => g.Key, g => g.First().Time);
+            // Compute first TF2 bar's time-of-day per day to calculate ElapsedMinutes
+            // Python: elapsed = (hour*60+minute) - first_tf2_bar_minute_of_day (per day)
+            var firstTf2MinutePerDate = tf2Bars.GroupBy(b => b.Time.Date)
+                .ToDictionary(g => g.Key, g => g.First().Time.Hour * 60 + g.First().Time.Minute);
 
             var result = new List<StrategyDataRow>(tf2Bars.Count);
             int tf1Index = 0;
@@ -109,10 +110,10 @@ namespace RTSF_Strategy_ML.Data
                                 (month == 3 || month == 6 || month == 9 || month == 12);
                 row.AllowTrade = !inExpiry;
 
-                // Elapsed minutes
-                if (firstBarTimePerDate.TryGetValue(tf2.Time.Date, out var firstBarTime))
+                // Elapsed minutes from first TF2 bar of the day (matches Python _minutes_from_day_start)
+                if (firstTf2MinutePerDate.TryGetValue(tf2.Time.Date, out int firstMinute))
                 {
-                    row.ElapsedMinutes = (int)(tf2.Time - firstBarTime).TotalMinutes;
+                    row.ElapsedMinutes = (tf2.Time.Hour * 60 + tf2.Time.Minute) - firstMinute;
                 }
 
                 // Pre-calculated True Range (on TF2) for ATR calculation later

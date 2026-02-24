@@ -65,11 +65,13 @@ namespace RTSF_Strategy_ML.Tests
             Assert.False(rows[0].AllowTrade);
             Assert.False(rows[1].AllowTrade);
             
-            // 1st group ends at 10:00 + 89m = 11:29
-            // 2nd group ends at 10:00 + 90m = 11:30
-            // ElapsedMinutes is calculated from the first M1 bar of the day (10:00) using the resulting TF2 bar time
-            Assert.Equal(89, rows[0].ElapsedMinutes);
-            Assert.Equal(90, rows[1].ElapsedMinutes);
+            // 1st TF2 bar ends at 10:00 + 89m = 11:29
+            // 2nd TF2 bar ends at 10:00 + 90m = 11:30
+            // ElapsedMinutes is computed from the first TF2 bar's time-of-day (11:29 = 689 min)
+            // 1st TF2 bar: 689 - 689 = 0
+            // 2nd TF2 bar: 690 - 689 = 1
+            Assert.Equal(0, rows[0].ElapsedMinutes);
+            Assert.Equal(1, rows[1].ElapsedMinutes);
         }
 
         [Fact]

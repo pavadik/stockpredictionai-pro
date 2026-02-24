@@ -8,9 +8,8 @@ namespace RTSF_Strategy_ML.Core
     public static class Indicators
     {
         /// <summary>
-        /// Simple Moving Average (SMA).
-        /// Returns an array of the same length as the input, with NaN where there is not enough history.
-        /// Ignores NaN values in the series to prevent propagation.
+        /// Simple Moving Average (SMA) with min_periods=1 behavior (matches pandas rolling(period, min_periods=1).mean()).
+        /// Returns partial averages from bar 0 when fewer than <paramref name="period"/> values are available.
         /// </summary>
         public static float[] Sma(float[] series, int period)
         {
@@ -19,24 +18,19 @@ namespace RTSF_Strategy_ML.Core
 
             for (int i = 0; i < series.Length; i++)
             {
-                if (i < period - 1)
-                {
-                    result[i] = float.NaN;
-                    continue;
-                }
-
+                int windowStart = Math.Max(0, i - period + 1);
                 float sum = 0;
                 int validCount = 0;
-                for (int j = 0; j < period; j++)
+                for (int j = windowStart; j <= i; j++)
                 {
-                    float val = series[i - j];
+                    float val = series[j];
                     if (!float.IsNaN(val))
                     {
                         sum += val;
                         validCount++;
                     }
                 }
-                
+
                 result[i] = validCount > 0 ? sum / validCount : float.NaN;
             }
             return result;

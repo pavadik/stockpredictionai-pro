@@ -26,7 +26,7 @@ namespace RTSF_Strategy_ML.Core.Models
         // Expiration filter: false if inside an expiration week block
         public bool AllowTrade { get; set; }
         
-        // Intraday elapsed minutes since the first M1 bar of the current trading day
+        // Intraday elapsed minutes since the first TF2 bar of the current trading day
         public int ElapsedMinutes { get; set; }
         
         // True if this is the last bar of the trading week
