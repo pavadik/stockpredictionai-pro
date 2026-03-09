@@ -1,0 +1,153 @@
+{
+  "run_args": {
+    "data_path": "G:\\data2",
+    "ticker": "RTSF",
+    "train_start": "2007-01-01",
+    "train_end": "2018-12-31",
+    "oos_start": "2019-01-01",
+    "oos_end": "2022-12-31",
+    "k1_bins": 7,
+    "k2_bins": 7,
+    "sl_bins": 9,
+    "max_epoch": 10,
+    "step_per_epoch": 500,
+    "step_per_collect": 32,
+    "episode_len": 8,
+    "episode_per_test": 4,
+    "batch_size": 64,
+    "buffer_size": 10000,
+    "update_per_step": 1.0,
+    "lr": 0.001,
+    "discount": 0.99,
+    "estimation_step": 3,
+    "target_update_freq": 160,
+    "num_atoms": 51,
+    "v_min": -5000.0,
+    "v_max": 5000.0,
+    "train_eps": 0.25,
+    "test_eps": 0.01,
+    "seed": 42,
+    "top_k": 12,
+    "konkop_report": "G:\\StockPredict\\GIT\\strategy_release_v3\\outputs\\experiments\\BLOCK_E_COMBINED_KONKOP.txt",
+    "output_dir": "G:\\StockPredict\\GIT\\strategy_release_e1\\outputs"
+  },
+  "action_grid": {
+    "k1_values": [
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5,
+      1.75,
+      2.0
+    ],
+    "k2_values": [
+      0.5,
+      0.75,
+      1.0,
+      1.005,
+      1.25,
+      1.5,
+      1.75,
+      2.0
+    ],
+    "sl_values": [
+      10.0,
+      71.25,
+      80.0,
+      132.5,
+      193.75,
+      255.0,
+      316.25,
+      377.5,
+      438.75,
+      500.0
+    ]
+  },
+  "baseline_hp": {
+    "koeff1": 1.0,
+    "koeff2": 1.005,
+    "sl_pts": 80.0
+  },
+  "baseline_action": {
+    "idx": 192,
+    "hp": [
+      1.0,
+      1.005,
+      80.0
+    ],
+    "train": {
+      "avg_trade": 1208.5429936305732,
+      "num_trades": 628,
+      "total_pnl": 758965.0,
+      "win_rate": 0.5286624203821656,
+      "profit_factor": 1.2155547382337613,
+      "max_drawdown": 258145.0,
+      "sharpe": 1.129420264332767
+    },
+    "oos": {
+      "avg_trade": 1317.3275862068965,
+      "num_trades": 232,
+      "total_pnl": 305620.0,
+      "win_rate": 0.5818965517241379,
+      "profit_factor": 1.3038395005269123,
+      "max_drawdown": 170450.0,
+      "sharpe": 1.49471766573209
+    }
+  },
+  "trainer_result": {
+    "duration": "75.01s",
+    "train_time/model": "73.81s",
+    "test_step": 352,
+    "test_episode": 44,
+    "test_time": "0.13s",
+    "test_speed": "2686.46 step/s",
+    "best_reward": 9721.692524682652,
+    "best_result": "9721.69 ± 0.00",
+    "train_step": 5120,
+    "train_episode": 640,
+    "train_time/collector": "1.07s",
+    "train_speed": "68.38 step/s"
+  },
+  "policy_best_action": {
+    "idx": 162,
+    "hp": [
+      1.0,
+      0.5,
+      80.0
+    ],
+    "policy_q": 4004.000244140625
+  },
+  "konkop_oos": {
+    "net_profit": 11664123.0,
+    "profit_factor": 1.58,
+    "max_dd_pct": 15.93,
+    "avg_trade_1c": 1186.1,
+    "pf_1c": 2.95
+  },
+  "best_by_oos": {
+    "rank_oos": 1,
+    "action_idx": 0,
+    "koeff1": 0.5,
+    "koeff2": 0.5,
+    "sl_pts": 10.0,
+    "policy_q": 5.139892578125,
+    "is_policy_best": 0,
+    "train_avg_trade": 1248.3333333333333,
+    "train_trades": 930,
+    "train_total_pnl": 1160950.0,
+    "train_pf": 1.2255502516907284,
+    "train_max_dd_abs": 213610.0,
+    "train_max_dd_pct": 4.272200000000001,
+    "oos_avg_trade": 1930.4046242774566,
+    "oos_trades": 346,
+    "oos_total_pnl": 667920.0,
+    "oos_pf": 1.3938091447775713,
+    "oos_max_dd_abs": 193690.0,
+    "oos_max_dd_pct": 3.8738,
+    "delta_oos_pnl_vs_konkop": -10996203.0,
+    "delta_oos_pf_vs_konkop": -0.18619085522242873,
+    "delta_oos_max_dd_pct_vs_konkop": -12.0562
+  },
+  "n_candidates": 560
+}

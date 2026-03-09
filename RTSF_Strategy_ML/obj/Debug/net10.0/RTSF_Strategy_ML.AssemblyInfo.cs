@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RTSF_Strategy_ML")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+563e960cada8d74910a6c90dcfeae8aabbaaad64")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0b1180a4248fa71963b364ed6b51f8118a7383a")]
 [assembly: System.Reflection.AssemblyProductAttribute("RTSF_Strategy_ML")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RTSF_Strategy_ML")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
